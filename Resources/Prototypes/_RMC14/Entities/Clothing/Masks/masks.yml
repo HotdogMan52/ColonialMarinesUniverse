@@ -3,6 +3,7 @@
   id: CMBaseMask
   abstract: true
   components:
+  - type: IdentityBlocker
   - type: HideLayerClothing
     layers:
       Snout: Mask
@@ -235,7 +236,6 @@
   - type: Clothing
     sprite: _RMC14/Objects/Clothing/Mask/balaclava.rsi
   - type: IdentityBlocker
-    coverage: MOUTH
   - type: Item
     storedRotation: -90
   - type: HideLayerClothing

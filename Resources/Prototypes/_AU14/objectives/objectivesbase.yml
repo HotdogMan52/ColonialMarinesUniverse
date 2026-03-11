@@ -39,7 +39,7 @@
   parent: RMCCommunicationsConsoleBase
   id: ComputerObjectivesGovfor
   name: GOVFOR Objectives Console
-  description: Used to check progress on objectives
+  description: Used to check progress on GOVFOR objectives.
   components:
   - type: ObjectivesConsole
     faction: govfor
@@ -52,13 +52,18 @@
   - type: PointLight
     radius: 1.5
     energy: 1.6
-    color: "#1f8c28"
+    color: "#9FA445"
+  - type: Sprite
+    drawdepth: SmallObjects
+    sprite: _RMC14/Structures/Machines/objectivesconsole.rsi
+    state: on
+    layers: [ ]
 
 - type: entity
   parent: RMCCommunicationsConsoleBase
   id: ComputerObjectivesScientist
   name: Scientist Objectives Console
-  description: Used to check progress on scientist objectives
+  description: Used to check progress on scientist objectives.
   components:
   - type: ObjectivesConsole
     faction: SCIENTIST
@@ -71,13 +76,18 @@
   - type: PointLight
     radius: 1.5
     energy: 1.6
-    color: "#1f6c8c"
+    color: "#9FA445"
+  - type: Sprite
+    drawdepth: SmallObjects
+    sprite: _RMC14/Structures/Machines/objectivesconsole.rsi
+    state: on
+    layers: [ ]
 
 - type: entity
   parent: RMCCommunicationsConsoleBase
   id: ComputerObjectivesCLF
   name: CLF Objectives Console
-  description: Used to check progress on CLF objectives
+  description: Used to check progress on CLF objectives.
   components:
   - type: Transform
     anchored: false
@@ -106,13 +116,18 @@
   - type: PointLight
     radius: 1.5
     energy: 1.6
-    color: "#8c1f1f"
+    color: "#9FA445"
+  - type: Sprite
+    drawdepth: SmallObjects
+    sprite: _RMC14/Structures/Machines/objectivesconsole.rsi
+    state: on
+    layers: [ ]
 
 - type: entity
   parent: RMCCommunicationsConsoleBase
   id: ComputerObjectivesOpfor
   name: OPFOR Objectives Console
-  description: Used to check progress on OPFOR objectives
+  description: Used to check progress on OPFOR objectives.
   components:
   - type: ObjectivesConsole
     faction: opfor
@@ -125,5 +140,9 @@
   - type: PointLight
     radius: 1.5
     energy: 1.6
-    color: "#8c8c1f"
-
+    color: "#9FA445"
+  - type: Sprite
+    drawdepth: SmallObjects
+    sprite: _RMC14/Structures/Machines/objectivesconsole.rsi
+    state: on
+    layers: [ ]

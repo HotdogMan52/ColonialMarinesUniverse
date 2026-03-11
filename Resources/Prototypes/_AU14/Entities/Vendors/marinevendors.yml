@@ -856,6 +856,10 @@
     - name: M240 Incinerator
       entries:
       - id: RMCWeaponFlamer
+        giveSquadRoleName: au14-job-name-govforspecialist-pyrotechUSCM
+        givePrefix: au14-job-prefix-govforspecialist-pyrotechUSCM
+        isAppendPrefix: true
+        isAppendSquadRoleName: false
         amount: 1
       - id: RMCPVECaseFlamerFuel
         amount: 1
@@ -865,6 +869,10 @@
     - name: M5RA battle rifle
       entries:
       - id: RMCPVECaseM5SPR
+        giveSquadRoleName: au14-job-name-govforspecialist-marksmanRMC
+        givePrefix: au14-job-prefix-govforspecialist-marksmanRMC
+        isAppendPrefix: true
+        isAppendSquadRoleName: false
         amount: 1
       - id: RMCAttachmentB8SmartScope
         amount: 1
@@ -877,6 +885,10 @@
     - name: M42A2 pump shotgun
       entries:
       - id: RMCPVECaseM42A2
+        giveSquadRoleName: au14-job-name-govforspecialist-ShotgunnerUSCM
+        givePrefix: au14-job-prefix-govforspecialist-ShotgunnerUSCM
+        isAppendPrefix: true
+        isAppendSquadRoleName: false
         amount: 1
       - id: RMCBoxShotgunBuckshot
         amount: 4
@@ -885,6 +897,10 @@
     - name: XM99A phased plasma pulse rifle
       entries:
       - id: AU14CaseXM99A
+        giveSquadRoleName: au14-job-name-govforspecialist-PlasmagunnerUSCM
+        givePrefix: au14-job-prefix-govforspecialist-PlasmagunnerUSCM
+        isAppendPrefix: true
+        isAppendSquadRoleName: false
         amount: 1
     - name: Explosives
       entries:
@@ -1024,7 +1040,7 @@
   parent: CMVendorBundleRiflemanApparel
   id: AU14VendorBundleCombatTechnicianEssentials
   name: essential engineer set
-  description: Contains 50 metal, 40 plasteel, 25 sandbags, a high-capacity power cell, a light replacer, a welding visor, and a nailgun.
+  description: Contains 50 metal, 50 plasteel, 50 sandbags, a sentry laptop, an engineering kit, a high-capacity power cell, a light replacer, a welding visor, and a nailgun.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Tools/wrench.rsi
@@ -1032,11 +1048,13 @@
   - type: CMVendorBundle
     bundle:
     - RMCExplosivePlastic
-    - CMSandbagEmpty25
+    - CMSandbagEmpty50
     - CMSheetMetal50
-    - CMSheetPlasteel40
+    - CMSheetPlasteel50
     - RMCPowerCellHigh
     - RMCLightReplacer
     - CMAPCElectronics
     - RMCNailgunTactical
     - RMCVisorWelding
+    - RMCEngineerKit
+    - RMCSentryLaptop

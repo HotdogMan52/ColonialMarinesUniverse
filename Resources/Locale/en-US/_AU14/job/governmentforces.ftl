@@ -102,6 +102,13 @@ au14-job-prefix-AU14JobGOVFORSectionSergeantCMBCIU = ULDR
 au14-job-prefix-AU14JobGOVFORSquadRiflemanCMBCIU = OFF
 au14-job-prefix-AU14JobGOVFORSquadSergeantCMBCIU = TLDR
 
+au14-job-name-govforspecialist-pyrotechUSCM = Pyrotechnician
+au14-job-prefix-govforspecialist-pyrotechUSCM = PTN
+au14-job-name-govforspecialist-ShotgunnerUSCM = Shotgunner
+au14-job-prefix-govforspecialist-ShotgunnerUSCM = SGR
+au14-job-name-govforspecialist-PlasmagunnerUSCM = Plasmagunner
+au14-job-prefix-govforspecialist-PlasmagunnerUSCM = PGR
+
 au14-job-name-govforsquadsergeantRMC = Team Leader
 au14-job-prefix-govforsquadsergeantRMC = SC
 au14-job-name-govforsquadautomaticriflemanRMC = Machinegunner

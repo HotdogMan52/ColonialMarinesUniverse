@@ -24,8 +24,8 @@
     - Burst
     - FullAuto
     soundGunshot:
-      collection: CMM54CShoot
-    shotsPerBurst: 5
+      collection: AU14M41FireSound
+    shotsPerBurst: 4
   - type: RMCSelectiveFire
     baseFireModes:
     - SemiAuto
@@ -34,21 +34,21 @@
     recoilUnwielded: 5
     scatterWielded: 5
     scatterUnwielded: 25
-    baseFireRate: 6
+    baseFireRate: 5.5
     burstScatterMult: 2
     modifiers:
       Burst:
         fireDelay: 0.1665
-        maxScatterModifier: 10
+        maxScatterModifier: 2
+        useBurstScatterMult: true
+        unwieldedScatterMultiplier: 2
+        shotsToMaxScatter: 7
+      FullAuto:
+        fireDelay: 0
+        maxScatterModifier: 5
         useBurstScatterMult: true
         unwieldedScatterMultiplier: 2
         shotsToMaxScatter: 6
-      FullAuto:
-        fireDelay: 0
-        maxScatterModifier: 26
-        useBurstScatterMult: true
-        unwieldedScatterMultiplier: 2
-        shotsToMaxScatter: 4
   - type: RMCWeaponAccuracy
     accuracyMultiplier: 1.15
     accuracyMultiplierUnwielded: 0.65
@@ -108,7 +108,7 @@
       tags:
       - CMCartridgeRifle10x24mm
     proto: CMCartridgeRifle10x24mm
-    capacity: 40
+    capacity: 50
   - type: Sprite
     sprite: _AU14/Weapons/Guns/Ammo/Magazines/kramermag.rsi
     layers:

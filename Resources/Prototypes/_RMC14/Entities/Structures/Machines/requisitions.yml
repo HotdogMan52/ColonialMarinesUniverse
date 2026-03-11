@@ -234,7 +234,7 @@
 - type: entity
   parent: [ CMASRSConsole ]
   id: CMASRSConsoleGovfor
-  name: ASRS console (Govfor)
+  name: GOVFOR ASRS console
   components:
   - type: AccessReader
     access: [ [ "AU14AccessGovforCommand" ] ]
@@ -244,7 +244,7 @@
 - type: entity
   parent: [ CMASRSConsole ]
   id: CMASRSConsoleOpfor
-  name: ASRS console (Opfor)
+  name: OPFOR ASRS console
   components:
   - type: AccessReader
     access: [ [ "AU14AccessOpforCommand" ] ]
@@ -254,7 +254,7 @@
 - type: entity
   parent: CMCargoElevator
   id: CMCargoElevatorGovfor
-  name: cargo elevator (Govfor)
+  name: GOVFOR cargo elevator
   components:
   - type: RequisitionsElevator
     faction: govfor
@@ -262,7 +262,7 @@
 - type: entity
   parent: CMCargoElevator
   id: CMCargoElevatorOpfor
-  name: cargo elevator (Opfor)
+  name: OPFOR cargo elevator
   components:
   - type: RequisitionsElevator
     faction: opfor
