@@ -41,7 +41,7 @@
       icon:
         sprite: /Textures/_RMC14/Interface/map_blips.rsi
         state: leader
-    - type: MarineOrdersV
+    - type: MarineOrders
     - type: UserIFF
       factions:
       - OPFOR
