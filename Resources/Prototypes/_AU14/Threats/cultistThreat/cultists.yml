@@ -89,7 +89,3 @@
   storage:
     back:
     - XenoEgg
-
-- type: playTimeTracker
-  id: AU14JobCultist
-  isHumanoid: true
