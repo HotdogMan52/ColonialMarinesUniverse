@@ -245,22 +245,32 @@
         crate: RMCCrateXM51
       - cost: 250
         crate: RMCCrateMK80
+        maxStock: 1
+        stockReplenishDelay: 300
       - cost: 400
         crate: RMCCrateXM88
       - cost: 800
         crate: CMUCrateOlympiets
       - cost: 600
         crate: RMCCrateM85A1
+        maxStock: 1
+        stockReplenishDelay: 600
       - cost: 200
         crate: AU14CrateAssortedKnives
       - cost: 800
         crate: RMCCrateM34
       - cost: 2200
         crate: AU14CrateHJRA12
+        maxStock: 1
+        stockReplenishDelay: 600
       - cost: 1200
         crate: AU14CrateOG60
+        maxStock: 1
+        stockReplenishDelay: 600
       - cost: 1500
         crate: AU14CrateM5A1SLAW
+        maxStock: 1
+        stockReplenishDelay: 600
     - name: Ammo
       entries:
       - cost: 400
