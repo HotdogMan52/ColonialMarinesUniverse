@@ -7,6 +7,7 @@
   faction: opfor
   roles:
   - AU14JobOPFORPlatCo
+  - AU14JobOPFORAdjutant
   - AU14JobOPFORPlatOp
   - AU14JobOPFORadvisor
   - AU14JobOPFORSectionSergeant

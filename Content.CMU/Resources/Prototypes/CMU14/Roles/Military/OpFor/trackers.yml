@@ -6,7 +6,7 @@
 - type: trackerMode
   id: OpforExecutiveOfficer
   alert: SquadTrackerExecutiveOfficer
-  job: AU14JobOPFORadvisor
+  job: AU14JobOPFORAdjutant
 
 - type: trackerMode
   id: OpforSeniorEnlistedAdvisor
