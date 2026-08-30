@@ -7,6 +7,13 @@
 
 - type: jobIcon
   parent: CMJobIconBase
+  id: AU14JobIconOPFORWeaponsSpecialist
+  icon:
+    sprite: CMU14/Interface/au14opforjobicons.rsi
+    state: ws
+
+- type: jobIcon
+  parent: CMJobIconBase
   id: AU14JobIconOPFORCorpsman
   icon:
     sprite: CMU14/Interface/au14opforjobicons.rsi

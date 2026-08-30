@@ -7,6 +7,10 @@
   name: Opfor Squad
 
 - type: accessLevel
+  id: AU14AccessOpforSquadWeaponsSpecialist
+  name: Opfor Squad WS
+
+- type: accessLevel
   id: AU14AccessOpforCommand
   name: Opfor Command
 

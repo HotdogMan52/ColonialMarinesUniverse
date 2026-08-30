@@ -130,6 +130,14 @@
 
 - type: entity
   parent: AU14IDCardOPFOR
+  id: AU14IDCardOPFORWeaponsSpecialist
+  name: weapons specialist ID card
+  components:
+  - type: PresetIdCard
+    job: AU14JobOPFORWeaponsSpecialist
+
+- type: entity
+  parent: AU14IDCardOPFOR
   id: AU14IDCardOPFORSquadAutomaticRifleman
   name: squad automatic rifleman ID card
   components:
