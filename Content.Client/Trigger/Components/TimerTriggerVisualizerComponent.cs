@@ -22,7 +22,6 @@ public sealed partial class TimerTriggerVisualsComponent : Component
 
     /// <summary>
     /// The RSI state used when the device is primed.
-    /// Not VVWrite-able because it's only used at component init to construct the priming animation.
     /// </summary>
     [DataField]
     public string PrimingSprite = "primed";
@@ -35,8 +34,8 @@ public sealed partial class TimerTriggerVisualsComponent : Component
     public SoundSpecifier? PrimingSound;
 
     /// <summary>
-    /// The actual priming animation.
-    /// Constructed at component init from the sprite and sound.
+    /// Keeps track of the primed state and plays its optional sound.
+    /// The looping sprite state is handled by <see cref="TimerTriggerVisualizerSystem"/>.
     /// </summary>
     [ViewVariables]
     public Animation PrimingAnimation = default!;
