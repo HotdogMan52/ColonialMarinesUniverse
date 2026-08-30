@@ -19,7 +19,7 @@
   alias:
   - distresssignal
   name: Distress Signal
-# showInVote: true # Ins-Only
+  showInVote: true
   description: Investigate a mysterious distress signal as government forces.
   requiresGovforVote: true
   supportedPlanets:
