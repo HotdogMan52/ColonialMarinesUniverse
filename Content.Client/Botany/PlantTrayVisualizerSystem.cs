@@ -65,10 +65,6 @@ public sealed partial class PlantTrayVisualizerSystem : VisualizerSystem<PlantTr
         {
             if (TryComp<PlantHolderComponent>(plantUid, out var plantHolder))
             {
-                alert |= plantHolder.ImproperHeat
-                         || plantHolder.ImproperPressure
-                         || plantHolder.MissingGas;
-
                 health = _plantHolder.GetHealthThreshold(plantUid.Value);
                 harvest = plantHolder.ReadyForHarvest;
             }
