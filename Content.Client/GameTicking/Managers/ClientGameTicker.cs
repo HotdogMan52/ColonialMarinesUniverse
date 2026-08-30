@@ -9,6 +9,7 @@ using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Client.State;
+using Robust.Client.Timing;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio;
@@ -23,6 +24,7 @@ namespace Content.Client.GameTicking.Managers
         [Dependency] private IClientAdminManager _admin = default!;
         [Dependency] private IClyde _clyde = default!;
         [Dependency] private IGameTiming _timing = default!;
+        [Dependency] private IClientGameTiming _clientTiming = default!;
         [Dependency] private IUserInterfaceManager _userInterfaceManager = default!;
 
         private Dictionary<NetEntity, Dictionary<ProtoId<JobPrototype>, int?>>  _jobsAvailable = new();
@@ -71,9 +73,31 @@ namespace Content.Client.GameTicking.Managers
             SubscribeNetworkEvent<RequestWindowAttentionEvent>(OnAttentionRequest);
             SubscribeNetworkEvent<TickerLateJoinStatusEvent>(LateJoinStatus);
             SubscribeNetworkEvent<TickerJobsAvailableEvent>(UpdateJobsAvailable);
+            SubscribeNetworkEvent<RoundRestartNetworkEntityCleanupEvent>(OnRoundRestartNetworkEntityCleanupEvent);
 
             _admin.AdminStatusUpdated += OnAdminUpdated;
             OnAdminUpdated();
+        }
+
+        private void OnRoundRestartNetworkEntityCleanupEvent(RoundRestartNetworkEntityCleanupEvent _)
+        {
+            var toDelete = new List<EntityUid>();
+            var query = EntityQueryEnumerator<MetaDataComponent>();
+
+            while (query.MoveNext(out var entity, out var metadata))
+            {
+                if (!metadata.NetEntity.IsClientSide())
+                    toDelete.Add(entity);
+            }
+
+            using (_clientTiming.StartStateApplicationArea())
+            {
+                foreach (var entity in toDelete)
+                {
+                    if (EntityManager.EntityExists(entity))
+                        EntityManager.DeleteEntity(entity);
+                }
+            }
         }
 
         public override void Shutdown()

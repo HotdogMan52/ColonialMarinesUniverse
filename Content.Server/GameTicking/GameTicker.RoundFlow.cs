@@ -1187,6 +1187,9 @@ namespace Content.Server.GameTicking
             // So clients' entity systems can clean up too...
             RaiseNetworkEvent(ev);
 
+            // Tell clients to remove the old server-owned entities only after their normal cleanup handlers ran.
+            RaiseNetworkEvent(new RoundRestartNetworkEntityCleanupEvent());
+
             EntityManager.FlushEntities();
 
             _banManager.Restart();
