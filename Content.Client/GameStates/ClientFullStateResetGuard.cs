@@ -20,7 +20,8 @@ public sealed class ClientFullStateResetGuard
 
     private FieldInfo _processorField = default!;
     private PropertyInfo _lastFullStateProperty = default!;
-    private GameState? _preparedState;
+    private GameState? _activeState;
+    private bool _recoveryRequested;
 
     public void Initialize()
     {
@@ -28,19 +29,45 @@ public sealed class ClientFullStateResetGuard
             ?? throw new InvalidOperationException("Client game-state processor field was not found.");
         _lastFullStateProperty = _processorField.FieldType.GetProperty("LastFullState", BindingFlags.Instance | BindingFlags.Public)
             ?? throw new InvalidOperationException("Pending full-state property was not found.");
+        _gameStates.GameStateApplied += OnGameStateApplied;
     }
 
     public void PreparePendingFullState()
     {
         var processor = _processorField.GetValue(_gameStates);
-        if (processor == null || _lastFullStateProperty.GetValue(processor) is not GameState state)
+        var pendingState = processor == null
+            ? null
+            : _lastFullStateProperty.GetValue(processor) as GameState;
+
+        if (pendingState != null && !ReferenceEquals(_activeState, pendingState))
+        {
+            _activeState = pendingState;
+            _recoveryRequested = false;
+        }
+
+        if (_activeState == null)
             return;
 
-        if (ReferenceEquals(_preparedState, state))
+        // Keep preparing the state until GameStateApplied confirms success. Content timers run between this callback
+        // and engine state application, so a one-shot pass can become stale before PartialStateReset starts.
+        PrepareState(_activeState);
+
+        if (pendingState == null && !_recoveryRequested)
+        {
+            // PartialStateReset clears the processor's pending state before it enumerates stale entities. If that
+            // enumeration aborts, GameStateApplied never fires and the client needs a replacement full state.
+            _recoveryRequested = true;
+            _gameStates.RequestFullState();
+        }
+    }
+
+    private void OnGameStateApplied(GameStateAppliedArgs args)
+    {
+        if (!ReferenceEquals(_activeState, args.AppliedState))
             return;
 
-        PrepareState(state);
-        _preparedState = state;
+        _activeState = null;
+        _recoveryRequested = false;
     }
 
     internal void PrepareState(GameState state)
@@ -59,16 +86,25 @@ public sealed class ClientFullStateResetGuard
                 staleEntities.Add(uid);
         }
 
-        foreach (var uid in staleEntities)
+        // Detaching can raise content events that alter another stale hierarchy. Repeat until a complete pass finds
+        // no children; a later PreEngine pass will retry if an event continually recreates them.
+        for (var pass = 0; pass < 8; pass++)
         {
-            PrepareStaleEntity(uid);
+            var detached = 0;
+            foreach (var uid in staleEntities)
+            {
+                detached += PrepareStaleEntity(uid);
+            }
+
+            if (detached == 0)
+                break;
         }
     }
 
-    internal void PrepareStaleEntity(EntityUid uid)
+    internal int PrepareStaleEntity(EntityUid uid)
     {
         if (!_entities.TryGetComponent(uid, out TransformComponent? transform))
-            return;
+            return 0;
 
         var children = new List<EntityUid>();
         var enumerator = transform.ChildEnumerator;
@@ -86,5 +122,7 @@ public sealed class ClientFullStateResetGuard
             if (_entities.IsClientSide(child))
                 _entities.DeleteEntity(child);
         }
+
+        return children.Count;
     }
 }

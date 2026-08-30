@@ -88,6 +88,16 @@ public sealed class ClientFullStateResetGuardTest : GameTest
                 Assert.That(CEntMan.GetComponent<TransformComponent>(parent).ChildCount, Is.Zero);
             });
 
+            var lateChild = CEntMan.SpawnEntity(null, MapCoordinates.Nullspace);
+            Client.System<SharedTransformSystem>().SetParent(lateChild, parent);
+            guard.PrepareStaleEntity(parent);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(CEntMan.Deleted(lateChild), Is.True, "a child attached after the first pass must also be prepared");
+                Assert.That(CEntMan.GetComponent<TransformComponent>(parent).ChildCount, Is.Zero);
+            });
+
             CEntMan.DeleteEntity(parent);
         });
     }
