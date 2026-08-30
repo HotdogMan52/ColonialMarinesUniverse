@@ -7,7 +7,6 @@ using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.FeedbackPopup;
 using Content.Client.Fullscreen;
-using Content.Client.GameStates;
 using Content.Client.GameTicking.Managers;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
@@ -83,7 +82,6 @@ namespace Content.Client.Entry
         [Dependency] private IEntitySystemManager _entitySystemManager = default!;
         [Dependency] private ClientsidePlaytimeTrackingManager _clientsidePlaytimeManager = default!;
         [Dependency] private ClientFeedbackManager _feedbackManager = null!;
-        [Dependency] private ClientFullStateResetGuard _fullStateResetGuard = default!;
 
         public override void PreInit()
         {
@@ -180,8 +178,6 @@ namespace Content.Client.Entry
             _documentParsingManager.Initialize();
             _titleWindowManager.Initialize();
             _feedbackManager.Initialize();
-            _fullStateResetGuard.Initialize();
-
             _baseClient.RunLevelChanged += (_, args) =>
             {
                 if (args.NewLevel == ClientRunLevel.Initialize)
@@ -240,8 +236,6 @@ namespace Content.Client.Entry
 
             if (level == ModUpdateLevel.PreEngine)
             {
-                _fullStateResetGuard.PreparePendingFullState();
-
                 if (_baseClient.RunLevel is ClientRunLevel.InGame or ClientRunLevel.SinglePlayerGame)
                 {
                     var updateSystem = _entitySystemManager.GetEntitySystem<BuiPreTickUpdateSystem>();
