@@ -9,7 +9,6 @@ namespace Content.Server.Botany.Systems;
 public sealed partial class PlantConsumeExudeGasSystem : SharedPlantConsumeExudeGasSystem
 {
     [Dependency] private AtmosphereSystem _atmosphere = default!;
-    [Dependency] private PlantHolderSystem _plantHolder = default!;
 
     [SubscribeLocalEvent]
     private void OnPlantGrow(Entity<PlantConsumeExudeGasComponent> ent, ref PlantGrowEvent args)
@@ -21,25 +20,20 @@ public sealed partial class PlantConsumeExudeGasSystem : SharedPlantConsumeExude
         var environment = _atmosphere.GetContainingMixture(ent.Owner, true, true) ?? GasMixture.SpaceGas;
 
         // Consume Gasses.
-        plantHolder.MissingGas = false;
-        var missingGas = 0;
+        if (plantHolder.MissingGas)
+        {
+            plantHolder.MissingGas = false;
+            DirtyField(ent.Owner, plantHolder, nameof(plantHolder.MissingGas));
+        }
+
         if (ent.Comp.ConsumeGasses.Count > 0)
         {
             foreach (var (gas, amount) in ent.Comp.ConsumeGasses)
             {
                 if (environment.GetMoles(gas) < amount)
-                {
-                    missingGas++;
                     continue;
-                }
 
                 environment.AdjustMoles(gas, -amount);
-            }
-
-            if (missingGas > 0)
-            {
-                _plantHolder.AdjustsHealth(ent.Owner, -missingGas);
-                plantHolder.MissingGas = true;
             }
         }
 
