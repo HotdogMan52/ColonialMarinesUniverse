@@ -1323,7 +1323,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             if (meleeWeapon.HitSound?.Equals(itemToggleMelee.ActivatedSoundOnHit) != true)
             {
                 meleeWeapon.HitSound = itemToggleMelee.ActivatedSoundOnHit;
-                DirtyField(uid, meleeWeapon, nameof(MeleeWeaponComponent.HitSound));
+                Dirty(uid, meleeWeapon);
             }
 
             if (itemToggleMelee.ActivatedSoundOnHitNoDamage != null)
@@ -1331,7 +1331,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
                 //Setting the deactivated sound on no damage hit to the weapon's regular value before changing it.
                 itemToggleMelee.DeactivatedSoundOnHitNoDamage ??= meleeWeapon.NoDamageSound;
                 meleeWeapon.NoDamageSound = itemToggleMelee.ActivatedSoundOnHitNoDamage;
-                DirtyField(uid, meleeWeapon, nameof(MeleeWeaponComponent.NoDamageSound));
+                Dirty(uid, meleeWeapon);
             }
 
             if (itemToggleMelee.ActivatedSoundOnSwing != null)
@@ -1339,7 +1339,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
                 //Setting the deactivated sound on no damage hit to the weapon's regular value before changing it.
                 itemToggleMelee.DeactivatedSoundOnSwing ??= meleeWeapon.SwingSound;
                 meleeWeapon.SwingSound = itemToggleMelee.ActivatedSoundOnSwing;
-                DirtyField(uid, meleeWeapon, nameof(MeleeWeaponComponent.SwingSound));
+                Dirty(uid, meleeWeapon);
             }
 
             if (itemToggleMelee.DeactivatedSecret)
@@ -1356,18 +1356,18 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             }
 
             meleeWeapon.HitSound = itemToggleMelee.DeactivatedSoundOnHit;
-            DirtyField(uid, meleeWeapon, nameof(MeleeWeaponComponent.HitSound));
+            Dirty(uid, meleeWeapon);
 
             if (itemToggleMelee.DeactivatedSoundOnHitNoDamage != null)
             {
                 meleeWeapon.NoDamageSound = itemToggleMelee.DeactivatedSoundOnHitNoDamage;
-                DirtyField(uid, meleeWeapon, nameof(MeleeWeaponComponent.NoDamageSound));
+                Dirty(uid, meleeWeapon);
             }
 
             if (itemToggleMelee.DeactivatedSoundOnSwing != null)
             {
                 meleeWeapon.SwingSound = itemToggleMelee.DeactivatedSoundOnSwing;
-                DirtyField(uid, meleeWeapon, nameof(MeleeWeaponComponent.SwingSound));
+                Dirty(uid, meleeWeapon);
             }
 
             if (itemToggleMelee.DeactivatedSecret)

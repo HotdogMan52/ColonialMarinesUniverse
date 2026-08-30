@@ -802,7 +802,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (comp.SoundGunshotModified != ev.SoundGunshot)
         {
             comp.SoundGunshotModified = ev.SoundGunshot;
-            DirtyField(gun, nameof(GunComponent.SoundGunshotModified));
+            Dirty(gun);
         }
 
         if (!MathHelper.CloseTo(comp.CameraRecoilScalarModified, ev.CameraRecoilScalar))
