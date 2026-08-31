@@ -6,6 +6,8 @@
   components:
   - type: Vehicle
     movementKind: Grid
+    transferDamage: false
+  - type: VehicleOccupantDamage
   - type: Clickable
   - type: RMCIgnoreGhostInteractionLimits
   - type: RequireProjectileTarget
@@ -229,6 +231,8 @@
   components:
   - type: Vehicle
     movementKind: Grid
+    transferDamage: false
+  - type: VehicleOccupantDamage
   - type: Clickable
   - type: GridVehicleMover
     maxSpeed: 8

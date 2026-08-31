@@ -600,8 +600,8 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         if (mover.WallSmashHullDamage > 0f)
         {
             var hull = mover.WallSmashHullDamage * selfDamageMult;
-            if (hull > 0f)
-                _hardpoints.DamageVehicleHull(vehicle, hull);
+            if (hull > 0f && _hardpoints.DamageVehicleHull(vehicle, hull))
+                _vehicleInteriors.DamageOccupantsFromCollision(vehicle, hull);
         }
     }
 
@@ -754,8 +754,8 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         if (mover.WallSmashHullDamage > 0f)
         {
             var hull = mover.WallSmashHullDamage * selfDamageMult;
-            if (hull > 0f)
-                _hardpoints.DamageVehicleHull(vehicle, hull);
+            if (hull > 0f && _hardpoints.DamageVehicleHull(vehicle, hull))
+                _vehicleInteriors.DamageOccupantsFromCollision(vehicle, hull);
         }
 
         return true;

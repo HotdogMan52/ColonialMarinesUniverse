@@ -8,7 +8,9 @@ using Content.Shared._RMC14.Teleporter;
 using Content.Shared._RMC14.Xenonids;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
+using Content.Shared.Explosion;
 using Content.Shared.Ghost;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Interaction;
@@ -40,6 +42,7 @@ public sealed partial class VehicleSystem : EntitySystem
     private readonly HashSet<EntityUid> _exitDestinationIntersecting = new();
 
     [Dependency] private AreaSystem _area = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private SharedEyeSystem _eye = default!;
     [Dependency] private VehicleViewToggleSystem _viewToggle = default!;
     [Dependency] private INetManager _net = default!;
@@ -77,6 +80,7 @@ public sealed partial class VehicleSystem : EntitySystem
         SubscribeLocalEvent<VehicleInteriorOccupantComponent, ComponentRemove>(OnOccupantRemove);
         SubscribeLocalEvent<VehicleInteriorOccupantComponent, MapUidChangedEvent>(OnOccupantMapChanged);
         SubscribeLocalEvent<VehicleInteriorOccupantComponent, MetaFlagRemoveAttemptEvent>(OnOccupantMetaFlagRemoveAttempt);
+        SubscribeLocalEvent<VehicleOccupantDamageComponent, BeforeExplodeEvent>(OnVehicleBeforeExplode);
         SubscribeLocalEvent<HardpointIntegrityComponent, VehicleCanRunEvent>(OnFrameVehicleCanRun);
         SubscribeLocalEvent<VehicleInteriorComponent, VehicleFrameIntegrityChangedEvent>(OnVehicleFrameIntegrityChanged);
         SubscribeLocalEvent<RMCConstructionAttemptEvent>(OnConstructionAttempt);

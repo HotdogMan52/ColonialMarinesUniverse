@@ -54,6 +54,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
     [Dependency] private SharedDestructibleSystem _destructible = default!;
     [Dependency] private SharedRMCPowerSystem _rmcPower = default!;
     [Dependency] private HardpointSystem _hardpoints = default!;
+    [Dependency] private Content.Shared._RMC14.Vehicle.VehicleSystem _vehicleInteriors = default!;
     [Dependency] private Content.Shared.Tag.TagSystem _tag = default!;
     [Dependency] private Content.Shared.Popups.SharedPopupSystem _popup = default!;
     [Dependency] private CMUSharedZLevelsSystem _zLevels = default!;

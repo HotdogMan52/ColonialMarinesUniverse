@@ -54,7 +54,7 @@ public sealed partial class CMUVehicleZTraversalComponent : Component
     /// Multiplier for occupant damage from vehicle landing impact.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float LandingOccupantDamageMultiplier = 0.35f;
+    public float LandingOccupantDamageMultiplier = 0.15f;
 
     /// <summary>
     /// Multiplier for damage dealt to entities under the landing footprint.
