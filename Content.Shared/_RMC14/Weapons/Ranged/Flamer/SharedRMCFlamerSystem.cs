@@ -617,7 +617,7 @@ public abstract partial class SharedRMCFlamerSystem : EntitySystem
                 continue;
             }
 
-            for (var i = comp.Tiles.Count - 1; i >= 0; i--)
+            for (var i = 0; i < comp.Tiles.Count; i++)
             {
                 var tile = comp.Tiles[i];
                 if (time < tile.At)
