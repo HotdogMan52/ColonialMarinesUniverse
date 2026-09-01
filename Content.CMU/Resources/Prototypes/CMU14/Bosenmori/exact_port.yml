@@ -9814,7 +9814,7 @@
   id: CMUBosenmoriExacta19958615384b143
   # CMSS13 source: /turf/open/desert/desert_shore/shore_corner1/north
   name: "north shore corner1"
-  sprite: /Textures/CMU14/Bosenmori/Exact/Tiles/0d1ee7294b2192917ce3.png
+  sprite: /Textures/CMU14/Bosenmori/Exact/Tiles/5607fc50f457f2012d79.png
   baseTurf: Plating
   isSubfloor: false
 
@@ -12579,7 +12579,7 @@
   id: CMUBosenmoriExactcd4ae5b4a2423514
   # CMSS13 source: /turf/open/desert/desert_shore/shore_corner1/west
   name: "west shore corner1"
-  sprite: /Textures/CMU14/Bosenmori/Exact/Tiles/0d1ee7294b2192917ce3.png
+  sprite: /Textures/CMU14/Bosenmori/Exact/Tiles/77c69c52e82d6fd15261.png
   baseTurf: Plating
   isSubfloor: false
 
