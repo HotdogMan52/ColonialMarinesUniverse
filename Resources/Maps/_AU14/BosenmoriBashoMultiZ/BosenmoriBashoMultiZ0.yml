@@ -118193,7 +118193,7 @@ entities:
     - type: Transform
       parent: 1
       pos: 109.5,43.5
-- proto: RMCBoxZipties
+- proto: RMCBoxZiptie
   entities:
   - uid: 48301
     components:
@@ -130311,7 +130311,7 @@ entities:
     - type: Transform
       parent: 1
       pos: 351.5,8.5
-- proto: StorageTank
+- proto: GenericTank
   entities:
   - uid: 42889
     components:
