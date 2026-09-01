@@ -4,11 +4,18 @@
   id: CMUBosenmoriProjectionViewerBase
   name: Bosenmori projection viewer
   suffix: CMU14, Bosenmori
+  components:
+  - type: RMCTeleporterViewer
+    projectionEnabled: false
+    projectAnchored: true
+    projectTiles: true
 
 - type: entity
   parent: CMUBosenmoriProjectionViewerBase
   id: CMUBosenmoriProjectionViewer4x4
   components:
+  - type: RMCTeleporterViewer
+    projectionTileMask: "...#/..##/.###/###."
   - type: Fixtures
     fixtures:
       fix1:
@@ -30,6 +37,8 @@
   parent: CMUBosenmoriProjectionViewerBase
   id: CMUBosenmoriProjectionViewer21x5
   components:
+  - type: RMCTeleporterViewer
+    projectionTileMask: "...###############.../#####################/#####################/#####################/...###############..."
   - type: Fixtures
     fixtures:
       fix1:
@@ -51,6 +60,8 @@
   parent: CMUBosenmoriProjectionViewerBase
   id: CMUBosenmoriProjectionViewer3x4
   components:
+  - type: RMCTeleporterViewer
+    projectionTileMask: "##./###/.##/.##"
   - type: Fixtures
     fixtures:
       fix1:
@@ -72,6 +83,8 @@
   parent: CMUBosenmoriProjectionViewerBase
   id: CMUBosenmoriProjectionViewer6x7
   components:
+  - type: RMCTeleporterViewer
+    projectionTileMask: "##..../###.../.#####/.#####/.#####/.####./..###."
   - type: Fixtures
     fixtures:
       fix1:
@@ -93,6 +106,8 @@
   parent: CMUBosenmoriProjectionViewerBase
   id: CMUBosenmoriProjectionViewer11x5
   components:
+  - type: RMCTeleporterViewer
+    projectionTileMask: "...#####.../###########/###########/###########/...#####..."
   - type: Fixtures
     fixtures:
       fix1:
@@ -114,6 +129,8 @@
   parent: CMUBosenmoriProjectionViewerBase
   id: CMUBosenmoriProjectionViewer1x1
   components:
+  - type: RMCTeleporterViewer
+    projectionTileMask: "#"
   - type: Fixtures
     fixtures:
       fix1:
@@ -135,6 +152,8 @@
   parent: CMUBosenmoriProjectionViewerBase
   id: CMUBosenmoriProjectionViewer6x6
   components:
+  - type: RMCTeleporterViewer
+    projectionTileMask: ".####./######/######/######/######/######"
   - type: Fixtures
     fixtures:
       fix1:

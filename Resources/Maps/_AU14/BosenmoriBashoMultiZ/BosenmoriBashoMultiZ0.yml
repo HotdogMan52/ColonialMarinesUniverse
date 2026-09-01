@@ -357641,6 +357641,7 @@ entities:
       pos: 20.5,34.5
     - type: RMCTeleporterViewer
       id: bosenmori-construction-site-1
+      projectionEnabled: true
 - proto: CMUBosenmoriProjectionViewer3x4
   entities:
   - uid: 52033
@@ -357657,6 +357658,7 @@ entities:
       pos: 164.5,160
     - type: RMCTeleporterViewer
       id: bosenmori-temple-first-floor-2
+      projectionEnabled: true
 - proto: CMUBosenmoriProjectionViewer4x4
   entities:
   - uid: 52029
@@ -357673,6 +357675,7 @@ entities:
       pos: 5,10
     - type: RMCTeleporterViewer
       id: bosenmori-abandoned-sector-1
+      projectionEnabled: true
 - proto: CMUBosenmoriProjectionViewer6x6
   entities:
   - uid: 52041
@@ -357689,6 +357692,7 @@ entities:
       pos: 97,69
     - type: RMCTeleporterViewer
       id: bosenmori-construction-1
+      projectionEnabled: true
 - proto: CMUBosenmoriProjectionViewer6x7
   entities:
   - uid: 52035
@@ -357705,6 +357709,7 @@ entities:
       pos: 287,122.5
     - type: RMCTeleporterViewer
       id: bosenmori-temple-second-floor-1
+      projectionEnabled: true
 - proto: CMUBosenmoriProjectionViewer11x5
   entities:
   - uid: 52037
@@ -357721,6 +357726,7 @@ entities:
       pos: 86.5,36.5
     - type: RMCTeleporterViewer
       id: bosenmori-tree-1
+      projectionEnabled: true
 - proto: CMUBosenmoriProjectionViewer21x5
   entities:
   - uid: 52031
@@ -357737,6 +357743,7 @@ entities:
       pos: 156.5,124.5
     - type: RMCTeleporterViewer
       id: bosenmori-temple-first-floor-1
+      projectionEnabled: true
 - proto: RMCUniversalRecorder
   entities:
   - uid: 47669
