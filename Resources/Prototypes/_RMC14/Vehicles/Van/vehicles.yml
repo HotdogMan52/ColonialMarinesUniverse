@@ -15,6 +15,9 @@
     maxSpeed: 8
     acceleration: 5
     deceleration: 12
+    maxRotationSpeedDegrees: 45
+    rotationAccelerationDegrees: 90
+    rotationDecelerationDegrees: 120
     turnDelay: 0.25
     pushCooldown: 2
     xenoBlockMinimumSize: Xeno
@@ -238,6 +241,9 @@
     maxSpeed: 8
     acceleration: 5
     deceleration: 12
+    maxRotationSpeedDegrees: 45
+    rotationAccelerationDegrees: 90
+    rotationDecelerationDegrees: 120
     turnDelay: 0.25
     pushCooldown: 2
     xenoBlockMinimumSize: Xeno
