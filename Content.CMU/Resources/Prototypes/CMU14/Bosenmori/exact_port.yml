@@ -2167,6 +2167,14 @@
     state: "source"
     noRot: true
 
+- type: tile
+  id: CMUBosenmoriExact26d204550cac6a48
+  # CMSS13 source: /turf/open/floor/strata/faux_metal
+  name: "faux metal"
+  sprite: /Textures/CMU14/Bosenmori/Exact/Tiles/9c2ff1e7781ff4eddf1d.png
+  baseTurf: Plating
+  isSubfloor: false
+
 - type: entity
   id: CMUBosenmoriExact2737a1a5d8c78b0b
   # CMSS13 source: /obj/item/storage/pouch/bayonet
@@ -11237,6 +11245,14 @@
   # CMSS13 source: /turf/open/floor/almayer/research/containment/floor2/north
   name: "north floor2"
   sprite: /Textures/CMU14/Bosenmori/Exact/Tiles/1b5f49155763e787c6c1.png
+  baseTurf: Plating
+  isSubfloor: false
+
+- type: tile
+  id: CMUBosenmoriExactb7a930fbbff0674a
+  # CMSS13 source: /turf/open/floor/plating/plating_catwalk/aicore/white
+  name: "white aicore"
+  sprite: /Textures/CMU14/Bosenmori/Exact/Tiles/be0e97f51376a9f51d14.png
   baseTurf: Plating
   isSubfloor: false
 
