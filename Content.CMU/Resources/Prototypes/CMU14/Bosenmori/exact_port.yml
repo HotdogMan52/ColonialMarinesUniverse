@@ -15318,6 +15318,14 @@
     noRot: true
     offset: -0.3125,0.375
 
+- type: tile
+  id: CMUBosenmoriExactf98665d1c0ab4ca2
+  # CMSS13 source: /turf/open/floor/warningcorner/east
+  name: "east warningcorner"
+  sprite: /Textures/CMU14/Bosenmori/Exact/Tiles/53aebc6a93e995ff7fa2.png
+  baseTurf: Plating
+  isSubfloor: false
+
 - type: entity
   id: CMUBosenmoriExactf98fb4943a545070
   # CMSS13 source: /obj/item/trash/wy_chips_pepper
