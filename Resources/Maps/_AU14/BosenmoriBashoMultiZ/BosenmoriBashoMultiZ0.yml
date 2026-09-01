@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/01/2026 16:19:36
-  entityCount: 51988
+  entityCount: 52002
 maps:
 - 1
 grids:
@@ -357625,6 +357625,118 @@ entities:
           Blunt: 100
         groups: null
       adjust: 20,-13
+- proto: CMUBosenmoriProjectionViewer1x1
+  entities:
+  - uid: 52039
+    components:
+    - type: Transform
+      parent: 1
+      pos: 308.5,34.5
+    - type: RMCTeleporterViewer
+      id: bosenmori-construction-site-1
+  - uid: 52040
+    components:
+    - type: Transform
+      parent: 1
+      pos: 20.5,34.5
+    - type: RMCTeleporterViewer
+      id: bosenmori-construction-site-1
+- proto: CMUBosenmoriProjectionViewer3x4
+  entities:
+  - uid: 52033
+    components:
+    - type: Transform
+      parent: 1
+      pos: 265.5,160
+    - type: RMCTeleporterViewer
+      id: bosenmori-temple-first-floor-2
+  - uid: 52034
+    components:
+    - type: Transform
+      parent: 1
+      pos: 164.5,160
+    - type: RMCTeleporterViewer
+      id: bosenmori-temple-first-floor-2
+- proto: CMUBosenmoriProjectionViewer4x4
+  entities:
+  - uid: 52029
+    components:
+    - type: Transform
+      parent: 1
+      pos: 223,10
+    - type: RMCTeleporterViewer
+      id: bosenmori-abandoned-sector-1
+  - uid: 52030
+    components:
+    - type: Transform
+      parent: 1
+      pos: 5,10
+    - type: RMCTeleporterViewer
+      id: bosenmori-abandoned-sector-1
+- proto: CMUBosenmoriProjectionViewer6x6
+  entities:
+  - uid: 52041
+    components:
+    - type: Transform
+      parent: 1
+      pos: 350,69
+    - type: RMCTeleporterViewer
+      id: bosenmori-construction-1
+  - uid: 52042
+    components:
+    - type: Transform
+      parent: 1
+      pos: 97,69
+    - type: RMCTeleporterViewer
+      id: bosenmori-construction-1
+- proto: CMUBosenmoriProjectionViewer6x7
+  entities:
+  - uid: 52035
+    components:
+    - type: Transform
+      parent: 1
+      pos: 307,109.5
+    - type: RMCTeleporterViewer
+      id: bosenmori-temple-second-floor-1
+  - uid: 52036
+    components:
+    - type: Transform
+      parent: 1
+      pos: 287,122.5
+    - type: RMCTeleporterViewer
+      id: bosenmori-temple-second-floor-1
+- proto: CMUBosenmoriProjectionViewer11x5
+  entities:
+  - uid: 52037
+    components:
+    - type: Transform
+      parent: 1
+      pos: 310.5,36.5
+    - type: RMCTeleporterViewer
+      id: bosenmori-tree-1
+  - uid: 52038
+    components:
+    - type: Transform
+      parent: 1
+      pos: 86.5,36.5
+    - type: RMCTeleporterViewer
+      id: bosenmori-tree-1
+- proto: CMUBosenmoriProjectionViewer21x5
+  entities:
+  - uid: 52031
+    components:
+    - type: Transform
+      parent: 1
+      pos: 257.5,124.5
+    - type: RMCTeleporterViewer
+      id: bosenmori-temple-first-floor-1
+  - uid: 52032
+    components:
+    - type: Transform
+      parent: 1
+      pos: 156.5,124.5
+    - type: RMCTeleporterViewer
+      id: bosenmori-temple-first-floor-1
 - proto: RMCUniversalRecorder
   entities:
   - uid: 47669
