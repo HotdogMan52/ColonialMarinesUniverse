@@ -8,8 +8,33 @@
   - type: Sprite
 
 - type: entity
+  parent: CMCorrodible
+  id: CMUBosenmoriExactStructureBase
+  abstract: true
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Sprite
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
   id: CMUBosenmoriExactUnderfloorVisualBase
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   abstract: true
   components:
   - type: SubFloorHide
@@ -18,7 +43,7 @@
   id: CMUBosenmoriExact0005437d84a67f24
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7954699f04f7e8cf2f61.rsi
@@ -124,7 +149,7 @@
   id: CMUBosenmoriExact029778372cae2dd4
   # CMSS13 source: /obj/structure/machinery/colony_floodlight_switch
   name: "colony floodlight switch"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/465a5a6ebd7516555f51.rsi
@@ -217,7 +242,7 @@
   id: CMUBosenmoriExact042ca4bdbf46237e
   # CMSS13 source: /obj/structure/xenoautopsy/jar_shelf
   name: "jar shelf"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/eb5243d908e56e52bc3b.rsi
@@ -252,7 +277,7 @@
   id: CMUBosenmoriExact05ced6e631af750f
   # CMSS13 source: /obj/structure/prop/dam/truck
   name: "truck"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/68fd789b076b78e8c376.rsi
@@ -298,7 +323,7 @@
   id: CMUBosenmoriExact06462e9536fe2a32
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/24973a57f547097c297b.rsi
@@ -310,7 +335,7 @@
   id: CMUBosenmoriExact06755e85766f6518
   # CMSS13 source: /obj/structure/machinery/faxmachine/backpack
   name: "backpack"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/77707b1d557cbeabf921.rsi
@@ -321,7 +346,7 @@
   id: CMUBosenmoriExact0686182c7a2681f8
   # CMSS13 source: /obj/structure/flora/bush/ausbushes/ppflowers
   name: "ppflowers"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/d96c0cc03b18ed31e06a.rsi
@@ -388,7 +413,7 @@
   id: CMUBosenmoriExact07eb5c5be8746640
   # CMSS13 source: /obj/structure/prop/ice_colony/surveying_device
   name: "surveying device"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/18205de5e8c22d4e6aed.rsi
@@ -444,7 +469,7 @@
   id: CMUBosenmoriExact08ca4c13a03b5888
   # CMSS13 source: /obj/structure/machinery/mill
   name: "mill"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/3763949844aabc8597a1.rsi
@@ -548,7 +573,7 @@
   id: CMUBosenmoriExact0a3113f0f8b1878a
   # CMSS13 source: /obj/structure/prop/dam/drill
   name: "drill"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e7a096db8da87afab8c4.rsi
@@ -560,7 +585,7 @@
   id: CMUBosenmoriExact0a3a09bfe2012698
   # CMSS13 source: /obj/structure/cargo_container/seegson/right
   name: "right seegson"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/671675fa883e8be76d4a.rsi
@@ -584,7 +609,7 @@
   id: CMUBosenmoriExact0a735090e1f97897
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/closed
   name: "closed"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/70e7e498607ccdc186bd.rsi
@@ -642,7 +667,7 @@
   id: CMUBosenmoriExact0babdc8e44131412
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/24973a57f547097c297b.rsi
@@ -665,7 +690,7 @@
   id: CMUBosenmoriExact0bd53915b9bc896a
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/24973a57f547097c297b.rsi
@@ -677,7 +702,7 @@
   id: CMUBosenmoriExact0c0a2194f2e3c792
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/closed
   name: "closed"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/70e7e498607ccdc186bd.rsi
@@ -713,7 +738,7 @@
   id: CMUBosenmoriExact0c62d191c79e9451
   # CMSS13 source: /obj/structure/bed/sofa/vert/grey/top
   name: "top"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7ea37c412bf59c9538f4.rsi
@@ -783,7 +808,7 @@
   id: CMUBosenmoriExact0d3a2f238c56a125
   # CMSS13 source: /obj/structure/closet/secure_closet/freezer/meat
   name: "meat"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/8fcda68fcb5cb90a201f.rsi
@@ -794,7 +819,7 @@
   id: CMUBosenmoriExact0d560a696a7e509f
   # CMSS13 source: /obj/structure/prop/ice_colony/surveying_device
   name: "surveying device"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/18205de5e8c22d4e6aed.rsi
@@ -805,7 +830,7 @@
   id: CMUBosenmoriExact0d6eca566357bda0
   # CMSS13 source: /obj/structure/prop/invuln/overhead/flammable_pipe/fly
   name: "fly"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/38cbc861bfa3bdab77a9.rsi
@@ -886,7 +911,7 @@
   id: CMUBosenmoriExact0e66029e26114c7d
   # CMSS13 source: /obj/structure/cargo_container/wy/mid
   name: "mid"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/6fbbd228c591f0860dc2.rsi
@@ -971,7 +996,7 @@
   id: CMUBosenmoriExact10a27753e0424697
   # CMSS13 source: /obj/structure/prop/dam/boulder/boulder3
   name: "boulder3"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ed7170031717fdca994b.rsi
@@ -982,7 +1007,7 @@
   id: CMUBosenmoriExact10aab6fbe632cf2c
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/6feae38ef43869cc6bae.rsi
@@ -1121,7 +1146,7 @@
   id: CMUBosenmoriExact134fad77750f2e2f
   # CMSS13 source: /obj/structure/medical_supply_link
   name: "medical supply link"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/5c619a71a44aaca66450.rsi
@@ -1167,7 +1192,7 @@
   id: CMUBosenmoriExact1415a3199a4b9651
   # CMSS13 source: /obj/structure/bed/roller
   name: "roller"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e0f8a6624385b6d233c5.rsi
@@ -1214,7 +1239,7 @@
   id: CMUBosenmoriExact14c4d784a867e0fd
   # CMSS13 source: /obj/structure/surface/table/holotable
   name: "holotable"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fc4ed39237d51d8e9a82.rsi
@@ -1237,7 +1262,7 @@
   id: CMUBosenmoriExact14ce88264774a686
   # CMSS13 source: /obj/structure/machinery/computer3/server/rack
   name: "rack"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e52cee1ed4855d7926a1.rsi
@@ -1248,7 +1273,7 @@
   id: CMUBosenmoriExact153b08ef8e8c4d23
   # CMSS13 source: /obj/structure/sign/double/barsign
   name: "barsign"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/be475886beb28fae7cb0.rsi
@@ -1260,7 +1285,7 @@
   id: CMUBosenmoriExact1633e9ea53fdce4e
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/on
   name: "on laptop"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/4783d6d8ebfe33ab3ae3.rsi
@@ -1284,7 +1309,7 @@
   id: CMUBosenmoriExact1729e0f7e46dbfcd
   # CMSS13 source: /obj/structure/sign/poster
   name: "poster"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/39b223fd46c7190b58d1.rsi
@@ -1296,7 +1321,7 @@
   id: CMUBosenmoriExact17358b03c0b93cc2
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/24973a57f547097c297b.rsi
@@ -1352,7 +1377,7 @@
   id: CMUBosenmoriExact1853d32a55821738
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/3185414ad63587e0206a.rsi
@@ -1399,7 +1424,7 @@
   id: CMUBosenmoriExact190f207176c6da3a
   # CMSS13 source: /obj/structure/prop/brazier/frame/full/campfire
   name: "campfire"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/4c5e52c67a07cd53f381.rsi
@@ -1480,7 +1505,7 @@
   id: CMUBosenmoriExact1a87b421dd34293c
   # CMSS13 source: /obj/structure/window/framed/almayer/white
   name: "white almayer"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/2d0dabac0da1a1f885ad.rsi
@@ -1491,7 +1516,7 @@
   id: CMUBosenmoriExact1b5aae4b24e6e6f4
   # CMSS13 source: /obj/structure/closet/secure_closet/chemical
   name: "chemical"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ba7274226e5096877d4d.rsi
@@ -1558,7 +1583,7 @@
   id: CMUBosenmoriExact1c492b6242903289
   # CMSS13 source: /obj/structure/sign/safety/two
   name: "marker two"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/95fec6ad17856955a2fd.rsi
@@ -1602,7 +1627,7 @@
   id: CMUBosenmoriExact1d25fd4167b07a8d
   # CMSS13 source: /obj/structure/cargo_container/kelland/left
   name: "left kelland"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/233032cbe4258deadfd8.rsi
@@ -1614,7 +1639,7 @@
   id: CMUBosenmoriExact1d2b6965fe482e60
   # CMSS13 source: /obj/structure/sign/safety/north
   name: "north safety"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/a0f9b49f53a28fd68f97.rsi
@@ -1637,7 +1662,7 @@
   id: CMUBosenmoriExact1d897f2cefa3b991
   # CMSS13 source: /obj/structure/flora/bush/ausbushes/genericbush
   name: "genericbush"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/57f23ee20b9e4e0ae7ac.rsi
@@ -1684,7 +1709,7 @@
   id: CMUBosenmoriExact1e226c70018af0ca
   # CMSS13 source: /obj/structure/closet/secure_closet/engineering_welding
   name: "engineering welding"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/4892ac9c6f3637cfe883.rsi
@@ -1753,7 +1778,7 @@
   id: CMUBosenmoriExact1fa6a585c23c905a
   # CMSS13 source: /obj/structure/machinery/prop/almayer/CICmap/table/horizontal/segment/four
   name: "four"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/d8c7636b446448e29405.rsi
@@ -1847,7 +1872,7 @@
   id: CMUBosenmoriExact2133a71926403ba1
   # CMSS13 source: /obj/structure/bed/chair/comfy/bench/south
   name: "south bench"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e8a807609b45e09d375b.rsi
@@ -1893,7 +1918,7 @@
   id: CMUBosenmoriExact21d0ca9bd5394452
   # CMSS13 source: /obj/structure/prop/ice_colony/surveying_device
   name: "surveying device"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/18205de5e8c22d4e6aed.rsi
@@ -1940,7 +1965,7 @@
   id: CMUBosenmoriExact2262d8ec4268f4e1
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/bottom
   name: "bottom"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b16f9aa8cdd8267f805c.rsi
@@ -1953,7 +1978,7 @@
   id: CMUBosenmoriExact22a9df564c5a42c1
   # CMSS13 source: /obj/structure/cargo_container/seegson/left
   name: "left seegson"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/389cd097cfdb25766ef7.rsi
@@ -1988,7 +2013,7 @@
   id: CMUBosenmoriExact22f50f511b9b5c95
   # CMSS13 source: /obj/structure/sign/safety/west
   name: "west safety"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/af0ee23e12d3859f952c.rsi
@@ -2000,7 +2025,7 @@
   id: CMUBosenmoriExact232181edac7b409c
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/30ccde09854f12e49b88.rsi
@@ -2022,7 +2047,7 @@
   id: CMUBosenmoriExact23d89f8d261f7a5d
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/closed
   name: "closed"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/70e7e498607ccdc186bd.rsi
@@ -2034,7 +2059,7 @@
   id: CMUBosenmoriExact24263cbdcb806002
   # CMSS13 source: /obj/structure/cargo_container/wy/right
   name: "right wy"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/5f3956167e2a02c0368c.rsi
@@ -2113,7 +2138,7 @@
   id: CMUBosenmoriExact25560dea362b3c7b
   # CMSS13 source: /obj/structure/cargo_container/lockmart/left
   name: "left lockmart"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fe4d6700feeecaa63f56.rsi
@@ -2160,7 +2185,7 @@
   id: CMUBosenmoriExact26592d04be76b891
   # CMSS13 source: /obj/structure/prop/server_equipment/broken
   name: "broken server equipment"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/26363975f56063e94e8c.rsi
@@ -2227,7 +2252,7 @@
   id: CMUBosenmoriExact284f827d1143e673
   # CMSS13 source: /obj/structure/flora/bush/ausbushes/var3/fernybush
   name: "fernybush"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/d0cf5f00cfda0966c2a5.rsi
@@ -2286,7 +2311,7 @@
   id: CMUBosenmoriExact29c405763e02fefe
   # CMSS13 source: /obj/structure/prop/almayer/computers/mission_planning_system
   name: "colonial operations terminal"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/98d031e1fd897502690b.rsi
@@ -2346,7 +2371,7 @@
   id: CMUBosenmoriExact2aa9d2318bbc78cf
   # CMSS13 source: /obj/structure/prop/almayer/whiteboard
   name: "whiteboard"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/215f6888f43252c356dc.rsi
@@ -2369,7 +2394,7 @@
   id: CMUBosenmoriExact2ae0852127e334c0
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/middle
   name: "middle"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/82b25782626bc13dad61.rsi
@@ -2405,7 +2430,7 @@
   id: CMUBosenmoriExact2c452340acc12295
   # CMSS13 source: /obj/structure/machinery/fermenter
   name: "fermenter"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/3763949844aabc8597a1.rsi
@@ -2416,7 +2441,7 @@
   id: CMUBosenmoriExact2c6a86e926a1af9f
   # CMSS13 source: /obj/structure/sign/safety/bulkhead_door
   name: "bulkhead door"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7747b6a51edf79c9b830.rsi
@@ -2428,7 +2453,7 @@
   id: CMUBosenmoriExact2cc0937c9103e210
   # CMSS13 source: /obj/structure/plasticflaps
   name: "plasticflaps"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/c1ed77ee8a41c5f16627.rsi
@@ -2450,7 +2475,7 @@
   id: CMUBosenmoriExact2ce1c794b9e352e5
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/top
   name: "top"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7057d18b887c65509192.rsi
@@ -2463,7 +2488,7 @@
   id: CMUBosenmoriExact2d0aa601aecc05b9
   # CMSS13 source: /obj/structure/prop/dam/truck/mining
   name: "mining"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/23a273acc625ac2245af.rsi
@@ -2521,7 +2546,7 @@
   id: CMUBosenmoriExact2dcf5098a0a08a55
   # CMSS13 source: /obj/structure/morgue
   name: "morgue"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/a4bd2dd9735b1648281b.rsi
@@ -2578,7 +2603,7 @@
   id: CMUBosenmoriExact2eab7ddc5959839a
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/closed
   name: "closed"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/70e7e498607ccdc186bd.rsi
@@ -2602,7 +2627,7 @@
   id: CMUBosenmoriExact2f0cc4040f6e6eeb
   # CMSS13 source: /obj/structure/bed/chair/comfy/beige
   name: "beige"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/cd70a236ec8da18499d3.rsi
@@ -2613,7 +2638,7 @@
   id: CMUBosenmoriExact2f281735853603fb
   # CMSS13 source: /obj/structure/prop/dam/boulder/boulder1
   name: "boulder1"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e311a661540fb5946e42.rsi
@@ -2648,7 +2673,7 @@
   id: CMUBosenmoriExact2f712d941428e6db
   # CMSS13 source: /obj/structure/sink
   name: "sink"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9fa4469d10896c345714.rsi
@@ -2707,7 +2732,7 @@
   id: CMUBosenmoriExact2fc4c6444fbe1f0d
   # CMSS13 source: /obj/structure/platform_decoration/kutjevo
   name: "kutjevo"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/37a6e0d6288409e60913.rsi
@@ -2741,7 +2766,7 @@
   id: CMUBosenmoriExact2ffcd52eb16e2e0a
   # CMSS13 source: /obj/structure/cargo_container/grant/leftmid
   name: "leftmid"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/796e2fe064967a1eaf07.rsi
@@ -2777,7 +2802,7 @@
   id: CMUBosenmoriExact303c0b36d59b751b
   # CMSS13 source: /obj/structure/prop/dam/truck/damaged
   name: "damaged truck"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/5f409fc103e0e7927388.rsi
@@ -2856,7 +2881,7 @@
   id: CMUBosenmoriExact311dc6c01cd630ba
   # CMSS13 source: /obj/structure/prop/broken_arcade
   name: "broken arcade"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/f5cec5d3a92766bac075.rsi
@@ -2939,7 +2964,7 @@
   id: CMUBosenmoriExact32444f84abc7f9a3
   # CMSS13 source: /obj/structure/platform_decoration/kutjevo/rock
   name: "rock"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/37a6e0d6288409e60913.rsi
@@ -2950,7 +2975,7 @@
   id: CMUBosenmoriExact325717ac1640c3ea
   # CMSS13 source: /obj/structure/sign/poster/safety
   name: "safety"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/c8f612f22c13cd244144.rsi
@@ -2962,7 +2987,7 @@
   id: CMUBosenmoriExact32b83b3ebf8c8224
   # CMSS13 source: /obj/structure/closet/secure_closet/medical1
   name: "medical1"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ba7274226e5096877d4d.rsi
@@ -2973,7 +2998,7 @@
   id: CMUBosenmoriExact32c7c6555b47ac93
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/6feae38ef43869cc6bae.rsi
@@ -2985,7 +3010,7 @@
   id: CMUBosenmoriExact33024cd985e1baa8
   # CMSS13 source: /obj/structure/prop/dam/truck
   name: "truck"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/68fd789b076b78e8c376.rsi
@@ -3083,7 +3108,7 @@
   id: CMUBosenmoriExact34632dfb9b6e4d48
   # CMSS13 source: /obj/structure/prop/dam/truck
   name: "truck"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/68fd789b076b78e8c376.rsi
@@ -3094,7 +3119,7 @@
   id: CMUBosenmoriExact346acb0f3fe31508
   # CMSS13 source: /obj/structure/sink
   name: "sink"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9fa4469d10896c345714.rsi
@@ -3105,7 +3130,7 @@
   id: CMUBosenmoriExact347a0c40c880bfbc
   # CMSS13 source: /obj/structure/sign/safety/intercom
   name: "intercom"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/54127f8ac8f229b536f7.rsi
@@ -3153,7 +3178,7 @@
   id: CMUBosenmoriExact35ae98040a387689
   # CMSS13 source: /obj/structure/machinery/prop/almayer/computer/PC
   name: "pc"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/97e70e4203909a7f6300.rsi
@@ -3199,7 +3224,7 @@
   id: CMUBosenmoriExact36202ddc3f8fb617
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/24973a57f547097c297b.rsi
@@ -3268,7 +3293,7 @@
   id: CMUBosenmoriExact36797eb279e02a59
   # CMSS13 source: /obj/structure/cargo_container/kelland/right
   name: "right kelland"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/1ab8db0bde9e6898412b.rsi
@@ -3280,7 +3305,7 @@
   id: CMUBosenmoriExact36a67179ce897c0b
   # CMSS13 source: /obj/structure/prop/server_equipment/yutani_server/off
   name: "off yutani server"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/aa79d0cdcb85017ce37f.rsi
@@ -3291,7 +3316,7 @@
   id: CMUBosenmoriExact36a7dbaac8e16d04
   # CMSS13 source: /obj/structure/bed/chair/comfy/lime
   name: "lime"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/d9f81f6d21b66e586a5f.rsi
@@ -3326,7 +3351,7 @@
   id: CMUBosenmoriExact36b5fdac9f5a7226
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/3185414ad63587e0206a.rsi
@@ -3361,7 +3386,7 @@
   id: CMUBosenmoriExact3797f7f1448f708b
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/24973a57f547097c297b.rsi
@@ -3385,7 +3410,7 @@
   id: CMUBosenmoriExact3808680863ba319b
   # CMSS13 source: /obj/structure/flora/bush/desert/cactus/multiple
   name: "multiple"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/292a45a6c0de576ae9d2.rsi
@@ -3420,7 +3445,7 @@
   id: CMUBosenmoriExact38ceb61d39528cd4
   # CMSS13 source: /obj/structure/sign/safety/ammunition
   name: "ammunition"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/4443f3d6c81f22ef718a.rsi
@@ -3432,7 +3457,7 @@
   id: CMUBosenmoriExact38e26886fe070815
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/top
   name: "top"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7057d18b887c65509192.rsi
@@ -3476,7 +3501,7 @@
   id: CMUBosenmoriExact3951317c0ed23a5d
   # CMSS13 source: /obj/structure/sign/poster
   name: "YOU ALWAYS KNOW A WORKING JOE."
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/dea7338ccea55ca092f4.rsi
@@ -3500,7 +3525,7 @@
   id: CMUBosenmoriExact39834aceff771245
   # CMSS13 source: /obj/structure/sign/poster/pinup
   name: "pinup"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/97a3fc516c6633e8de2b.rsi
@@ -3512,7 +3537,7 @@
   id: CMUBosenmoriExact398d2c5c773a93ea
   # CMSS13 source: /obj/structure/closet/secure_closet/engineering_electrical
   name: "engineering electrical"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/641d6ec615a28c6bf082.rsi
@@ -3547,7 +3572,7 @@
   id: CMUBosenmoriExact39db4ed03a6a83cb
   # CMSS13 source: /obj/structure/sign/banners/twe_flag
   name: "twe flag"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/1c26f1c8b7f1599d80f6.rsi
@@ -3559,7 +3584,7 @@
   id: CMUBosenmoriExact3a112a97defd3450
   # CMSS13 source: /obj/structure/sign/safety/bulkhead_door
   name: "bulkhead door"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7747b6a51edf79c9b830.rsi
@@ -3617,7 +3642,7 @@
   id: CMUBosenmoriExact3a8f237666403101
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/closed
   name: "closed"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/70e7e498607ccdc186bd.rsi
@@ -3674,7 +3699,7 @@
   id: CMUBosenmoriExact3b1f2f1e7c6653f5
   # CMSS13 source: /obj/structure/prop/almayer/computers/mapping_computer
   name: "colonial operations terminal"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/5be2dfe911146047a6cb.rsi
@@ -3720,7 +3745,7 @@
   id: CMUBosenmoriExact3b781ecc55216067
   # CMSS13 source: /obj/structure/closet/secure_closet/freezer/fridge
   name: "fridge"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/8fcda68fcb5cb90a201f.rsi
@@ -3731,7 +3756,7 @@
   id: CMUBosenmoriExact3bd07f06ebf35947
   # CMSS13 source: /obj/structure/bed/stool
   name: "stool"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/44e32270c5cae0593512.rsi
@@ -3763,7 +3788,7 @@
   id: CMUBosenmoriExact3cadbb9f2f395810
   # CMSS13 source: /obj/structure/sign/safety/one
   name: "marker one"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/cf46633b36fa229d5855.rsi
@@ -3799,7 +3824,7 @@
   id: CMUBosenmoriExact3d56bebf573b87d9
   # CMSS13 source: /obj/structure/cargo_container/seegson/left
   name: "left seegson"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/389cd097cfdb25766ef7.rsi
@@ -3811,7 +3836,7 @@
   id: CMUBosenmoriExact3d8b6e952a000e7a
   # CMSS13 source: /obj/structure/sign/poster/hunk
   name: "hunk"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/6855ac23d2ee8f2d7b86.rsi
@@ -3823,7 +3848,7 @@
   id: CMUBosenmoriExact3da7b0e84cf48092
   # CMSS13 source: /obj/structure/sign/poster/safety
   name: "safety"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/c8f612f22c13cd244144.rsi
@@ -3882,7 +3907,7 @@
   id: CMUBosenmoriExact3e70cfd102cce574
   # CMSS13 source: /obj/structure/inflatable
   name: "inflatable"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/2696165cf2f1d8c70531.rsi
@@ -4055,7 +4080,7 @@
   id: CMUBosenmoriExact40c923913dcd4a68
   # CMSS13 source: /obj/structure/closet/secure_closet/freezer/fridge/full
   name: "full fridge"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/8fcda68fcb5cb90a201f.rsi
@@ -4102,7 +4127,7 @@
   id: CMUBosenmoriExact4195a6cb90afa7c7
   # CMSS13 source: /obj/structure/closet/toolcloset
   name: "toolcloset"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/93a415e4d37c3d41a0af.rsi
@@ -4168,7 +4193,7 @@
   id: CMUBosenmoriExact42428c87de47a0be
   # CMSS13 source: /obj/structure/platform/stair_cut
   name: "stair cut"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/734b7241417a75ce4fe1.rsi
@@ -4178,7 +4203,7 @@
   id: CMUBosenmoriExact42b632a5d7636cfa
   # CMSS13 source: /obj/structure/prop/almayer/whiteboard
   name: "whiteboard"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/215f6888f43252c356dc.rsi
@@ -4320,7 +4345,7 @@
   id: CMUBosenmoriExact4575c68dae1f4964
   # CMSS13 source: /obj/structure/sign/safety/west
   name: "west safety"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/af0ee23e12d3859f952c.rsi
@@ -4332,7 +4357,7 @@
   id: CMUBosenmoriExact45807a396794e40d
   # CMSS13 source: /obj/structure/sign/safety/chem_lab
   name: "chem lab"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/d3e12b52ef757a1e0d5f.rsi
@@ -4379,7 +4404,7 @@
   id: CMUBosenmoriExact461a142e9d9cf233
   # CMSS13 source: /obj/structure/prop/dam/truck/cargo
   name: "cargo"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/8fe3955d7cbdb527b4b5.rsi
@@ -4520,7 +4545,7 @@
   id: CMUBosenmoriExact494c73e33a9a689a
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/closed
   name: "closed"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/70e7e498607ccdc186bd.rsi
@@ -4568,7 +4593,7 @@
   id: CMUBosenmoriExact4997debaecb3b369
   # CMSS13 source: /obj/structure/prop/ice_colony/surveying_device
   name: "surveying device"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/18205de5e8c22d4e6aed.rsi
@@ -4626,7 +4651,7 @@
   id: CMUBosenmoriExact4b803aa429606da6
   # CMSS13 source: /obj/structure/flora/tree/jungle/bigtreeTL
   name: "bigtreetl"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/42c03510511942aca9a1.rsi
@@ -4638,7 +4663,7 @@
   id: CMUBosenmoriExact4befcdd4e50ac83f
   # CMSS13 source: /obj/structure/bed/bedroll
   name: "bedroll"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/463349bee018d5216cfc.rsi
@@ -4673,7 +4698,7 @@
   id: CMUBosenmoriExact4cb14e693ba94d2a
   # CMSS13 source: /obj/structure/prop/ice_colony/surveying_device/measuring_device
   name: "measuring device"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/2ea19d758a65954e162a.rsi
@@ -4684,7 +4709,7 @@
   id: CMUBosenmoriExact4cb7abd8b602f9cb
   # CMSS13 source: /obj/structure/platform/stair_cut/alt
   name: "alt"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/560d3095481fcd5153c1.rsi
@@ -4717,7 +4742,7 @@
   id: CMUBosenmoriExact4d171ba1070402ac
   # CMSS13 source: /obj/structure/prop/dam/large_boulder/boulder1
   name: "boulder1"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/86c6b23a6ac0390f8ae7.rsi
@@ -4729,7 +4754,7 @@
   id: CMUBosenmoriExact4da24bfbf5d3dccd
   # CMSS13 source: /obj/structure/sign/banners/happybirthdaysteve
   name: "happybirthdaysteve"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/73bc757d0865c27f861b.rsi
@@ -4741,7 +4766,7 @@
   id: CMUBosenmoriExact4db459119f0ac0f1
   # CMSS13 source: /obj/structure/roof/cargocrane_tracks/vertical/endcap2
   name: "endcap2"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/1ba66bde0161f47398ae.rsi
@@ -4752,7 +4777,7 @@
   id: CMUBosenmoriExact4dc3d2c33038e3e8
   # CMSS13 source: /obj/structure/flora/tree/jungle/bigtreeBOT
   name: "bigtreebot"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/2d664010414830459f89.rsi
@@ -4764,7 +4789,7 @@
   id: CMUBosenmoriExact4dd7086840ab2c1c
   # CMSS13 source: /obj/structure/prop/dam/boulder
   name: "boulder"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e311a661540fb5946e42.rsi
@@ -4787,7 +4812,7 @@
   id: CMUBosenmoriExact4e33baa02219d258
   # CMSS13 source: /obj/structure/prop/almayer/whiteboard
   name: "whiteboard"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/215f6888f43252c356dc.rsi
@@ -4811,7 +4836,7 @@
   id: CMUBosenmoriExact4eb45d5155ba5120
   # CMSS13 source: /obj/structure/cargo_container/kelland/left
   name: "left kelland"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/233032cbe4258deadfd8.rsi
@@ -4823,7 +4848,7 @@
   id: CMUBosenmoriExact4ec8fd43f3d673be
   # CMSS13 source: /obj/structure/surface/table/reinforced/almayer_B
   name: "almayer b"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/388498b36b2a82c962d6.rsi
@@ -4913,7 +4938,7 @@
   id: CMUBosenmoriExact4fc5f9ad75dbc8c4
   # CMSS13 source: /obj/structure/sign/safety/bathunisex
   name: "bathunisex"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/0c8dd5cfbbc698be273b.rsi
@@ -4925,7 +4950,7 @@
   id: CMUBosenmoriExact4fff382560b5a407
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/top
   name: "top"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7057d18b887c65509192.rsi
@@ -4937,7 +4962,7 @@
   id: CMUBosenmoriExact5023afd32960e58e
   # CMSS13 source: /obj/structure/closet/secure_closet/freezer/industry
   name: "industry"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/8fcda68fcb5cb90a201f.rsi
@@ -4948,7 +4973,7 @@
   id: CMUBosenmoriExact5053a6ad922d2e13
   # CMSS13 source: /obj/structure/disposaloutlet
   name: "disposaloutlet"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ccd0743db16ae9028986.rsi
@@ -4981,7 +5006,7 @@
   id: CMUBosenmoriExact5101028548853862
   # CMSS13 source: /obj/structure/machinery/prop/almayer/CICmap/table/horizontal/segment/three
   name: "three"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/d8c7636b446448e29405.rsi
@@ -5000,7 +5025,7 @@
   id: CMUBosenmoriExact512fcca0d57a07b4
   # CMSS13 source: /obj/structure/sink
   name: "sink"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9fa4469d10896c345714.rsi
@@ -5035,7 +5060,7 @@
   id: CMUBosenmoriExact515b76bc2651e61b
   # CMSS13 source: /obj/structure/platform_decoration/strata/metal
   name: "metal"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/37a6e0d6288409e60913.rsi
@@ -5103,7 +5128,7 @@
   id: CMUBosenmoriExact52a504fb335e4b61
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop
   name: "laptop"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/33f02f49f1f6a965daa2.rsi
@@ -5114,7 +5139,7 @@
   id: CMUBosenmoriExact52ac418df93bdc29
   # CMSS13 source: /obj/structure/flora/jungle/treeblocker
   name: "treeblocker"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/50b7254af6274a6fc698.rsi
@@ -5159,7 +5184,7 @@
   id: CMUBosenmoriExact538895da9ee74713
   # CMSS13 source: /obj/structure/floodgate
   name: "floodgate"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/eb75dcfee6e52404c3ac.rsi
@@ -5206,7 +5231,7 @@
   id: CMUBosenmoriExact5487610f27b8a498
   # CMSS13 source: /obj/structure/prop/ice_colony/flamingo
   name: "flamingo"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/33c5b3c4eca67a6e8c3d.rsi
@@ -5228,7 +5253,7 @@
   id: CMUBosenmoriExact5560f219c74bc291
   # CMSS13 source: /obj/structure/bed/chair/hunter
   name: "strange chair"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/6cb4305a5ffe8b8f9185.rsi
@@ -5274,7 +5299,7 @@
   id: CMUBosenmoriExact55eb251498267b72
   # CMSS13 source: /obj/structure/machinery/xenoanalyzer
   name: "xenoanalyzer"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/95a4262349ab2cfb23e0.rsi
@@ -5363,7 +5388,7 @@
   id: CMUBosenmoriExact5772c8622b159880
   # CMSS13 source: /obj/structure/sign/safety/bulkhead_door
   name: "bulkhead door"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7747b6a51edf79c9b830.rsi
@@ -5458,7 +5483,7 @@
   id: CMUBosenmoriExact58f30254e392fcde
   # CMSS13 source: /obj/structure/machinery/prop/almayer/computer/PC
   name: "pc"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/97e70e4203909a7f6300.rsi
@@ -5480,7 +5505,7 @@
   id: CMUBosenmoriExact59414de39429d4b7
   # CMSS13 source: /obj/structure/sign/poster/pinup
   name: "pinup"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/97a3fc516c6633e8de2b.rsi
@@ -5492,7 +5517,7 @@
   id: CMUBosenmoriExact594ab5c1d7fb97ea
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/middle
   name: "middle"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/82b25782626bc13dad61.rsi
@@ -5539,7 +5564,7 @@
   id: CMUBosenmoriExact5a0a2e5a55fcea9c
   # CMSS13 source: /obj/structure/sign/banners/maximumeffort
   name: "maximumeffort"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/954bcc7911edcbea01a2.rsi
@@ -5551,7 +5576,7 @@
   id: CMUBosenmoriExact5a0dc2e2d14fafa6
   # CMSS13 source: /obj/structure/machinery/mecha_part_fabricator
   name: "mecha part fabricator"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/304c8b42a6e2cbf113b6.rsi
@@ -5562,7 +5587,7 @@
   id: CMUBosenmoriExact5a43f6acd78aa055
   # CMSS13 source: /obj/structure/cargo_container/lockmart/mid
   name: "mid"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/cda4322d939efa4e811d.rsi
@@ -5633,7 +5658,7 @@
   id: CMUBosenmoriExact5af9bf381b4bda89
   # CMSS13 source: /obj/structure/prop/almayer/missile_tube
   name: "Pipeline Feeder"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/f52c0734b73f7ba9950a.rsi
@@ -5669,7 +5694,7 @@
   id: CMUBosenmoriExact5ba40560e10e0518
   # CMSS13 source: /obj/structure/platform_decoration/kutjevo/rock
   name: "rock"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/37a6e0d6288409e60913.rsi
@@ -5691,7 +5716,7 @@
   id: CMUBosenmoriExact5be0bd749ab8ef4d
   # CMSS13 source: /obj/structure/machinery/prop/almayer/computer/PC
   name: "inventory computer"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/f296dfb968b89c38f716.rsi
@@ -5702,7 +5727,7 @@
   id: CMUBosenmoriExact5c0946522a2d0f44
   # CMSS13 source: /obj/structure/machinery/still
   name: "still"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/3763949844aabc8597a1.rsi
@@ -5736,7 +5761,7 @@
   id: CMUBosenmoriExact5c6e1b9f3c56ff52
   # CMSS13 source: /obj/structure/sign/safety/distribution_pipes
   name: "distribution pipes"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/62167d396323366bc931.rsi
@@ -5759,7 +5784,7 @@
   id: CMUBosenmoriExact5c9feecebe837fa9
   # CMSS13 source: /obj/structure/tunnel/maint_tunnel/no_xeno_desc
   name: "no xeno desc"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/49a3279634475a10af30.rsi
@@ -5829,7 +5854,7 @@
   id: CMUBosenmoriExact5d42bd05860a880c
   # CMSS13 source: /obj/structure/closet/secure_closet/engineering_materials
   name: "engineering materials"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/a6d7d85d7810a4e04c50.rsi
@@ -5910,7 +5935,7 @@
   id: CMUBosenmoriExact5ef1829c9cc92e6d
   # CMSS13 source: /obj/structure/prop/invuln/joey
   name: "joey"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ad94a594bc0d3f28fbf0.rsi
@@ -5921,7 +5946,7 @@
   id: CMUBosenmoriExact5f007946e0d9edac
   # CMSS13 source: /obj/structure/window/reinforced/tinted/frosted
   name: "frosted"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/3e648bf26e6419360b64.rsi
@@ -5966,7 +5991,7 @@
   id: CMUBosenmoriExact5f90c52a7d1a48f7
   # CMSS13 source: /obj/structure/platform/stair_cut/alt
   name: "alt"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/4f1a90d2486ea7607dfe.rsi
@@ -5988,7 +6013,7 @@
   id: CMUBosenmoriExact5fc5e48d185d69a0
   # CMSS13 source: /obj/structure/cargo_container/kelland/right
   name: "right kelland"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/1ab8db0bde9e6898412b.rsi
@@ -6000,7 +6025,7 @@
   id: CMUBosenmoriExact5fc9994c82bfd47b
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/closed
   name: "closed"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/70e7e498607ccdc186bd.rsi
@@ -6059,7 +6084,7 @@
   id: CMUBosenmoriExact617d3cce949b5e95
   # CMSS13 source: /obj/structure/prop/invuln/overhead/flammable_pipe/fly
   name: "fly"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/38cbc861bfa3bdab77a9.rsi
@@ -6234,7 +6259,7 @@
   id: CMUBosenmoriExact653c8b125ce85642
   # CMSS13 source: /obj/structure/closet/bombclosetsecurity
   name: "bombclosetsecurity"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/16285f5e2adc9982141f.rsi
@@ -6257,7 +6282,7 @@
   id: CMUBosenmoriExact659b867338fa8ae8
   # CMSS13 source: /obj/structure/machinery/gibber
   name: "gibber"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/3b59b9fe329420c610ec.rsi
@@ -6290,7 +6315,7 @@
   id: CMUBosenmoriExact662ee4f8eddeb667
   # CMSS13 source: /obj/structure/prop/invuln/minecart_tracks/bumper
   name: "bumper"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e62e029b88b592801f4e.rsi
@@ -6300,7 +6325,7 @@
   id: CMUBosenmoriExact6639771f7e569e2c
   # CMSS13 source: /obj/structure/prop
   name: "\\improper seat-like case"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/be5335c27a5aa94ee9ea.rsi
@@ -6416,7 +6441,7 @@
   id: CMUBosenmoriExact677e5645812662c8
   # CMSS13 source: /obj/structure/bed/chair/comfy/bench/mid
   name: "mid"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e8a807609b45e09d375b.rsi
@@ -6449,7 +6474,7 @@
   id: CMUBosenmoriExact679ff17e3327e966
   # CMSS13 source: /obj/structure/platform/kutjevo/smooth/stair_plate
   name: "stair plate"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/4f1a90d2486ea7607dfe.rsi
@@ -6484,7 +6509,7 @@
   id: CMUBosenmoriExact683f0304202c9cbd
   # CMSS13 source: /obj/structure/airlock_assembly
   name: "airlock assembly"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/f833131e26147a0570bf.rsi
@@ -6505,7 +6530,7 @@
   id: CMUBosenmoriExact6887a5849d61f938
   # CMSS13 source: /obj/structure/sign/safety/fibre_optics
   name: "fibre optics"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/cd6980fe389beb244372.rsi
@@ -6560,7 +6585,7 @@
   id: CMUBosenmoriExact692af52c5059e26c
   # CMSS13 source: /obj/structure/sign/banners/maximumeffort
   name: "maximumeffort"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/954bcc7911edcbea01a2.rsi
@@ -6584,7 +6609,7 @@
   id: CMUBosenmoriExact6986018fbff30244
   # CMSS13 source: /obj/structure/prop/invuln/overhead/flammable_pipe/fly
   name: "fly"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/38cbc861bfa3bdab77a9.rsi
@@ -6607,7 +6632,7 @@
   id: CMUBosenmoriExact69cca9304788aba0
   # CMSS13 source: /obj/structure/prop/dam/torii
   name: "torii"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/f24a65dc6baf1c146c85.rsi
@@ -6631,7 +6656,7 @@
   id: CMUBosenmoriExact6a120aacab0c94d6
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/middle
   name: "middle"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/82b25782626bc13dad61.rsi
@@ -6655,7 +6680,7 @@
   id: CMUBosenmoriExact6aa6da6cad9bbb09
   # CMSS13 source: /obj/structure/prop/almayer/cannon_cable_connector
   name: "cannon cable connector"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/41be9e52ae0c6d643493.rsi
@@ -6737,7 +6762,7 @@
   id: CMUBosenmoriExact6c1bc5e4b4ff80f5
   # CMSS13 source: /obj/structure/flora/tree/jungle/bigtreeTL
   name: "bigtreetl"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/42c03510511942aca9a1.rsi
@@ -6749,7 +6774,7 @@
   id: CMUBosenmoriExact6c4e51c4907d60e8
   # CMSS13 source: /obj/structure/closet
   name: "closet"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fbdd24c318b1e9ff610e.rsi
@@ -6761,7 +6786,7 @@
   id: CMUBosenmoriExact6c7223a7b5a52391
   # CMSS13 source: /obj/structure/prop/dam/truck
   name: "truck"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/68fd789b076b78e8c376.rsi
@@ -6784,7 +6809,7 @@
   id: CMUBosenmoriExact6c84b0be719a1634
   # CMSS13 source: /obj/structure/dartboard
   name: "dartboard"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/a66267a0f0c0d5a96e7e.rsi
@@ -6874,7 +6899,7 @@
   id: CMUBosenmoriExact6e0f348c473a7dec
   # CMSS13 source: /obj/structure/blocker/forcefield/human
   name: "height difference"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/75c38619bd6d4b4a7f41.rsi
@@ -6941,7 +6966,7 @@
   id: CMUBosenmoriExact6ee24ee9c79ea082
   # CMSS13 source: /obj/structure/machinery/botany/editor
   name: "editor"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/5b1f271e7076d01f1e89.rsi
@@ -6976,7 +7001,7 @@
   id: CMUBosenmoriExact6f861ae4642ea244
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/30ccde09854f12e49b88.rsi
@@ -7035,7 +7060,7 @@
   id: CMUBosenmoriExact711ea99069559131
   # CMSS13 source: /obj/structure/prop/invuln/pipe_water
   name: "pipe water"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9a005a1715dc287b5a51.rsi
@@ -7077,7 +7102,7 @@
   id: CMUBosenmoriExact71f55820d779deec
   # CMSS13 source: /obj/structure/bed/sofa/vert/grey/bot
   name: "bot"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/44d73d71006c4d91079a.rsi
@@ -7088,7 +7113,7 @@
   id: CMUBosenmoriExact7207d34e7fb1ddb5
   # CMSS13 source: /obj/structure/sign/poster/propaganda
   name: "propaganda"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/6cb74e954ca93a92bcae.rsi
@@ -7100,7 +7125,7 @@
   id: CMUBosenmoriExact725bd0a8ebe9a78d
   # CMSS13 source: /obj/structure/prop/dam/wide_boulder/boulder1
   name: "boulder1"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/64e726b8282bdcaa6e0b.rsi
@@ -7124,7 +7149,7 @@
   id: CMUBosenmoriExact7270e3efba8105e2
   # CMSS13 source: /obj/structure/dispenser
   name: "dispenser"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/13de746c07c8fcbd0a38.rsi
@@ -7158,7 +7183,7 @@
   id: CMUBosenmoriExact73226e7d037f2956
   # CMSS13 source: /obj/structure/roof/cargocrane_tracks/vertical
   name: "vertical"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/1ba66bde0161f47398ae.rsi
@@ -7228,7 +7253,7 @@
   id: CMUBosenmoriExact7429bccb9157adef
   # CMSS13 source: /obj/structure/xenoautopsy/jar_shelf
   name: "jar shelf"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/eb5243d908e56e52bc3b.rsi
@@ -7239,7 +7264,7 @@
   id: CMUBosenmoriExact7444612f6311f596
   # CMSS13 source: /obj/structure/sign/safety/intercom
   name: "intercom"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/54127f8ac8f229b536f7.rsi
@@ -7275,7 +7300,7 @@
   id: CMUBosenmoriExact74e47cc134d2853e
   # CMSS13 source: /obj/structure/sign/safety/fire_haz
   name: "fire haz"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/cb72a0f270f5a1aa1109.rsi
@@ -7310,7 +7335,7 @@
   id: CMUBosenmoriExact75466d098188f4f0
   # CMSS13 source: /obj/structure/prop/ice_colony/surveying_device/measuring_device
   name: "measuring device"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/2ea19d758a65954e162a.rsi
@@ -7320,7 +7345,7 @@
   id: CMUBosenmoriExact75709b28c3485043
   # CMSS13 source: /obj/structure/prop/ice_colony/poly_kevlon_roll
   name: "poly kevlon roll"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/766c46b5b628d14189da.rsi
@@ -7403,7 +7428,7 @@
   id: CMUBosenmoriExact7712e56e190eabb4
   # CMSS13 source: /obj/structure/sign/safety/fibre_optics
   name: "fibre optics"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/cd6980fe389beb244372.rsi
@@ -7462,7 +7487,7 @@
   id: CMUBosenmoriExact77633cb5d32d26d5
   # CMSS13 source: /obj/structure/bed/sofa/vert/grey
   name: "grey vert"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/a6cfadd6386747514486.rsi
@@ -7497,7 +7522,7 @@
   id: CMUBosenmoriExact77a0c5deac62716d
   # CMSS13 source: /obj/structure/filtration/machine_32x64/indestructible
   name: "indestructible"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/358ad4c8dc9bd39ad67f.rsi
@@ -7556,7 +7581,7 @@
   id: CMUBosenmoriExact78ffae012739203d
   # CMSS13 source: /obj/structure/surface/table
   name: "table"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fc4ed39237d51d8e9a82.rsi
@@ -7621,7 +7646,7 @@
   id: CMUBosenmoriExact7a68ac20530f7663
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/24973a57f547097c297b.rsi
@@ -7691,7 +7716,7 @@
   id: CMUBosenmoriExact7b55cddd08023526
   # CMSS13 source: /obj/structure/flora/bush/ausbushes/ausbush
   name: "ausbush"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/d96c0cc03b18ed31e06a.rsi
@@ -7702,7 +7727,7 @@
   id: CMUBosenmoriExact7b7cf388d6d3d052
   # CMSS13 source: /obj/structure/sink
   name: "sink"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9fa4469d10896c345714.rsi
@@ -7760,7 +7785,7 @@
   id: CMUBosenmoriExact7c3137cd9406d07c
   # CMSS13 source: /obj/structure/sign/nosmoking_2
   name: "nosmoking 2"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/219804447175c3436004.rsi
@@ -7807,7 +7832,7 @@
   id: CMUBosenmoriExact7c5ea3afd2d33c1d
   # CMSS13 source: /obj/structure/prop/invuln/pipe_water
   name: "pipe water"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9a005a1715dc287b5a51.rsi
@@ -7842,7 +7867,7 @@
   id: CMUBosenmoriExact7d64574db585f2e5
   # CMSS13 source: /obj/structure/closet/secure_closet/freezer/fridge/groceries
   name: "groceries"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/8fcda68fcb5cb90a201f.rsi
@@ -7853,7 +7878,7 @@
   id: CMUBosenmoriExact7d80ac58424ed775
   # CMSS13 source: /obj/structure/prop/ice_colony/poly_kevlon_roll
   name: "poly kevlon roll"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/766c46b5b628d14189da.rsi
@@ -7876,7 +7901,7 @@
   id: CMUBosenmoriExact7db61db5a2de0e38
   # CMSS13 source: /obj/structure/bed/bedroll
   name: "bedroll"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/463349bee018d5216cfc.rsi
@@ -7897,7 +7922,7 @@
   id: CMUBosenmoriExact7e4ab4978bf9f34b
   # CMSS13 source: /obj/structure/bed/chair/comfy/blue
   name: "blue comfy"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ae555308f1401da12fd1.rsi
@@ -7908,7 +7933,7 @@
   id: CMUBosenmoriExact7e8084dd9795544a
   # CMSS13 source: /obj/structure/prop/holidays/string_lights/corner
   name: "corner"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/60432393497fe6a82846.rsi
@@ -7978,7 +8003,7 @@
   id: CMUBosenmoriExact8101cd8529d60a18
   # CMSS13 source: /obj/structure/sign/poster/music
   name: "music"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/5762f7d6726184795c26.rsi
@@ -8038,7 +8063,7 @@
   id: CMUBosenmoriExact822762b19a10df39
   # CMSS13 source: /obj/structure/prop/ice_colony/surveying_device
   name: "surveying device"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/18205de5e8c22d4e6aed.rsi
@@ -8153,7 +8178,7 @@
   id: CMUBosenmoriExact84823a2e89b96994
   # CMSS13 source: /obj/structure/prop
   name: "\\improper seat-like case"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/be5335c27a5aa94ee9ea.rsi
@@ -8189,7 +8214,7 @@
   id: CMUBosenmoriExact84cede86a90ae44d
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/closed
   name: "closed"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/70e7e498607ccdc186bd.rsi
@@ -8247,7 +8272,7 @@
   id: CMUBosenmoriExact8694530334f815c8
   # CMSS13 source: /obj/structure/sign/poster/safety
   name: "safety"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/c8f612f22c13cd244144.rsi
@@ -8259,7 +8284,7 @@
   id: CMUBosenmoriExact86a3b4a10ceab9da
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/24973a57f547097c297b.rsi
@@ -8307,7 +8332,7 @@
   id: CMUBosenmoriExact86e796ecbf0db88d
   # CMSS13 source: /obj/structure/prop/dam/boulder/boulder2
   name: "boulder2"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/4dea91ba0380650d2486.rsi
@@ -8330,7 +8355,7 @@
   id: CMUBosenmoriExact8729182d11d868af
   # CMSS13 source: /obj/structure/janitorialcart/brown
   name: "brown janitorialcart"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9da3c1eb3912c03e2900.rsi
@@ -8354,7 +8379,7 @@
   id: CMUBosenmoriExact873ee7d8aed0dba3
   # CMSS13 source: /obj/structure/cargo_container/kelland/left
   name: "left kelland"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/233032cbe4258deadfd8.rsi
@@ -8366,7 +8391,7 @@
   id: CMUBosenmoriExact8747d2250f0a01c9
   # CMSS13 source: /obj/structure/sink
   name: "sink"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9fa4469d10896c345714.rsi
@@ -8448,7 +8473,7 @@
   id: CMUBosenmoriExact889b6fe8edc4506b
   # CMSS13 source: /obj/structure/closet/firecloset
   name: "firecloset"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fc3fe879c326d0fd4a2c.rsi
@@ -8589,7 +8614,7 @@
   id: CMUBosenmoriExact89ae639e7edd6f69
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/bottom
   name: "bottom"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b16f9aa8cdd8267f805c.rsi
@@ -8660,7 +8685,7 @@
   id: CMUBosenmoriExact8ac874d965921a97
   # CMSS13 source: /obj/structure/machinery/processor
   name: "processor"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/19fc364a411625dde1b6.rsi
@@ -8683,7 +8708,7 @@
   id: CMUBosenmoriExact8b016c7bbda866be
   # CMSS13 source: /obj/structure/closet
   name: "closet"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fbdd24c318b1e9ff610e.rsi
@@ -8755,7 +8780,7 @@
   id: CMUBosenmoriExact8ca48ab96b1c86a2
   # CMSS13 source: /obj/structure/prop/invuln/pipe_water
   name: "pipe water"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9a005a1715dc287b5a51.rsi
@@ -8850,7 +8875,7 @@
   id: CMUBosenmoriExact8ee08cb22c4a937c
   # CMSS13 source: /obj/structure/bed/chair/office/light
   name: "light"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b5923519182c5552e719.rsi
@@ -8861,7 +8886,7 @@
   id: CMUBosenmoriExact8f6a2151adf9b778
   # CMSS13 source: /obj/structure/prop/invuln/minecart_tracks
   name: "minecart tracks"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/44a56e13e3d8f9a708e3.rsi
@@ -9012,7 +9037,7 @@
   id: CMUBosenmoriExact91bda2f7f8fc9092
   # CMSS13 source: /obj/structure/dartboard
   name: "dartboard"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/a66267a0f0c0d5a96e7e.rsi
@@ -9024,7 +9049,7 @@
   id: CMUBosenmoriExact921a8cdca2a81a1e
   # CMSS13 source: /obj/structure/sign/banners/maximumeffort
   name: "maximumeffort"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/954bcc7911edcbea01a2.rsi
@@ -9060,7 +9085,7 @@
   id: CMUBosenmoriExact9258161949b29f79
   # CMSS13 source: /obj/structure/closet
   name: "closet"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fbdd24c318b1e9ff610e.rsi
@@ -9084,7 +9109,7 @@
   id: CMUBosenmoriExact9325afb208788ce9
   # CMSS13 source: /obj/structure/bed/chair/office/light
   name: "light"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b5923519182c5552e719.rsi
@@ -9151,7 +9176,7 @@
   id: CMUBosenmoriExact94451effb24fff9e
   # CMSS13 source: /obj/structure/cargo_container/kelland/left
   name: "left kelland"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/233032cbe4258deadfd8.rsi
@@ -9175,7 +9200,7 @@
   id: CMUBosenmoriExact950a3cefb11329e7
   # CMSS13 source: /obj/structure/bed/bedroll
   name: "bedroll"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/463349bee018d5216cfc.rsi
@@ -9205,7 +9230,7 @@
   id: CMUBosenmoriExact95966b148e5683b3
   # CMSS13 source: /obj/structure/cryofeed/right
   name: "Pipe Support Strut"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e64a009c73769e9a0b03.rsi
@@ -9239,7 +9264,7 @@
   id: CMUBosenmoriExact961499e751f30d67
   # CMSS13 source: /obj/structure/prop/dam/large_boulder/boulder2
   name: "boulder2"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e6b75a40cff0f7b9747c.rsi
@@ -9286,7 +9311,7 @@
   id: CMUBosenmoriExact97233a98b450e388
   # CMSS13 source: /obj/structure/window/framed/prefab
   name: "prefab"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/f9215690dfe374b6bc80.rsi
@@ -9403,7 +9428,7 @@
   id: CMUBosenmoriExact9933547e49370a6c
   # CMSS13 source: /obj/structure/prop/invuln/overhead/flammable_pipe/fly
   name: "fly"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/38cbc861bfa3bdab77a9.rsi
@@ -9483,7 +9508,7 @@
   id: CMUBosenmoriExact9a5ab2e9cdbcac5a
   # CMSS13 source: /obj/structure/sign/safety/med_life_support
   name: "med life support"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/2b34e08c74fc976cadbe.rsi
@@ -9507,7 +9532,7 @@
   id: CMUBosenmoriExact9b7cd0deb2f538ab
   # CMSS13 source: /obj/structure/prop/invuln/joey
   name: "Gambler Johnny"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ad94a594bc0d3f28fbf0.rsi
@@ -9575,7 +9600,7 @@
   id: CMUBosenmoriExact9c5a33a44bbfd64c
   # CMSS13 source: /obj/structure/machinery/botany/extractor
   name: "extractor"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/d8a61cb7a36a3df3f1d6.rsi
@@ -9587,7 +9612,7 @@
   id: CMUBosenmoriExact9caa627131dcf41c
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/middle
   name: "middle"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/82b25782626bc13dad61.rsi
@@ -9600,7 +9625,7 @@
   id: CMUBosenmoriExact9cb153b7cbd30b9a
   # CMSS13 source: /obj/structure/sink
   name: "sink"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9fa4469d10896c345714.rsi
@@ -9611,7 +9636,7 @@
   id: CMUBosenmoriExact9cfb32f05a921c35
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/closed
   name: "closed"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/70e7e498607ccdc186bd.rsi
@@ -9634,7 +9659,7 @@
   id: CMUBosenmoriExact9db9781211d7f0f4
   # CMSS13 source: /obj/structure/flora/bush/desert
   name: "desert"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/87de3811034637f2cb77.rsi
@@ -9727,7 +9752,7 @@
   id: CMUBosenmoriExact9f94e7feca320df1
   # CMSS13 source: /obj/structure/filtration/machine_96x96/sedimentation
   name: "sedimentation"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ce1fdf2e240ac7fde10f.rsi
@@ -9762,7 +9787,7 @@
   id: CMUBosenmoriExacta07e5dc6821ef746
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/bottom
   name: "bottom"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b16f9aa8cdd8267f805c.rsi
@@ -9866,7 +9891,7 @@
   id: CMUBosenmoriExacta25b2cb4a65e3605
   # CMSS13 source: /obj/structure/closet/bombcloset
   name: "bombcloset"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9417cf8b3120cbcb27a7.rsi
@@ -9890,7 +9915,7 @@
   id: CMUBosenmoriExacta340ea55e5923ed8
   # CMSS13 source: /obj/structure/cargo_container/grant/rightmid
   name: "rightmid"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/14a2a17ea301f0b163e8.rsi
@@ -10041,7 +10066,7 @@
   id: CMUBosenmoriExacta4762dfa9a83d212
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/top
   name: "top"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7057d18b887c65509192.rsi
@@ -10076,7 +10101,7 @@
   id: CMUBosenmoriExacta4b214a3f36178a0
   # CMSS13 source: /obj/structure/cryofeed
   name: "Pipe Support Strut"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b121a38b372d34812f4a.rsi
@@ -10112,7 +10137,7 @@
   id: CMUBosenmoriExacta54fda76573f9b6f
   # CMSS13 source: /obj/structure/machinery/prop/almayer/CICmap/table/horizontal/segment/one
   name: "one"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/d8c7636b446448e29405.rsi
@@ -10123,7 +10148,7 @@
   id: CMUBosenmoriExacta557ab904dc100d1
   # CMSS13 source: /obj/structure/sign/safety/biohazard
   name: "biohazard"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/584fb984b8972e67f4e8.rsi
@@ -10159,7 +10184,7 @@
   id: CMUBosenmoriExacta5b00b7e4a3f380f
   # CMSS13 source: /obj/structure/urinal
   name: "urinal"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/1800440d4ba2446a602e.rsi
@@ -10170,7 +10195,7 @@
   id: CMUBosenmoriExacta5eadd70541d8315
   # CMSS13 source: /obj/structure/device/broken_piano
   name: "broken piano"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ccad38cbe7da4964a1ac.rsi
@@ -10193,7 +10218,7 @@
   id: CMUBosenmoriExacta6a7ff57ab960c44
   # CMSS13 source: /obj/structure/cargo_container/seegson/mid
   name: "mid"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7a8b7cb51ced001811e5.rsi
@@ -10229,7 +10254,7 @@
   id: CMUBosenmoriExacta77966f0f2e4a78b
   # CMSS13 source: /obj/structure/cargo_container/lockmart/right
   name: "right lockmart"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/59fc84c25f27b968f710.rsi
@@ -10341,7 +10366,7 @@
   id: CMUBosenmoriExacta8f07e691870c57c
   # CMSS13 source: /obj/structure/machinery/prop/almayer/computer/PC
   name: "inventory computer"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/f296dfb968b89c38f716.rsi
@@ -10375,7 +10400,7 @@
   id: CMUBosenmoriExacta94bf58e86038a18
   # CMSS13 source: /obj/structure/cargo_container/kelland/right
   name: "right kelland"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/1ab8db0bde9e6898412b.rsi
@@ -10410,7 +10435,7 @@
   id: CMUBosenmoriExacta9db3a5dc548bee3
   # CMSS13 source: /obj/structure/sign/safety/bathunisex
   name: "bathunisex"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/0c8dd5cfbbc698be273b.rsi
@@ -10434,7 +10459,7 @@
   id: CMUBosenmoriExactaa0b3ae369ffcd12
   # CMSS13 source: /obj/structure/prop/invuln/overhead/flammable_pipe/fly
   name: "fly"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/38cbc861bfa3bdab77a9.rsi
@@ -10445,7 +10470,7 @@
   id: CMUBosenmoriExactaa2abfc1489ddc83
   # CMSS13 source: /obj/structure/airlock_assembly/multi_tile
   name: "multi tile"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/5fd341456a7657ab2205.rsi
@@ -10503,7 +10528,7 @@
   id: CMUBosenmoriExactaaff6685aa647237
   # CMSS13 source: /obj/structure/cargo_container/grant/rightmid
   name: "rightmid"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/14a2a17ea301f0b163e8.rsi
@@ -10546,7 +10571,7 @@
   id: CMUBosenmoriExactabced65245b65c62
   # CMSS13 source: /obj/structure/prop/dam/truck/cargo
   name: "cargo"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/8fe3955d7cbdb527b4b5.rsi
@@ -10569,7 +10594,7 @@
   id: CMUBosenmoriExactac0d92c6d0f8f885
   # CMSS13 source: /obj/structure/prop/invuln/catwalk_support
   name: "catwalk support"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b3ad50e0af649df08ade.rsi
@@ -10579,7 +10604,7 @@
   id: CMUBosenmoriExactac322fd28c8918df
   # CMSS13 source: /obj/structure/sign/safety/bulkhead_door
   name: "bulkhead door"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7747b6a51edf79c9b830.rsi
@@ -10603,7 +10628,7 @@
   id: CMUBosenmoriExactac70a7447e314b9d
   # CMSS13 source: /obj/structure/prop/wooden_cross
   name: "wooden cross"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b2b0711cc3446fb973a1.rsi
@@ -10669,7 +10694,7 @@
   id: CMUBosenmoriExactad7171d082630ff7
   # CMSS13 source: /obj/structure/sign/safety/ladder
   name: "ladder"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/65aa8be93ac7ba65605b.rsi
@@ -10692,7 +10717,7 @@
   id: CMUBosenmoriExactadec685df9865bef
   # CMSS13 source: /obj/structure/sign/safety/commline_connection
   name: "commline connection"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/eb3c2e95f8feae3c2332.rsi
@@ -10704,7 +10729,7 @@
   id: CMUBosenmoriExactae00ed615e6e897c
   # CMSS13 source: /obj/structure/sign/safety/three
   name: "three"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/3fcf1c16e5ff54e09c8f.rsi
@@ -10740,7 +10765,7 @@
   id: CMUBosenmoriExactae4ad07d5eb8b03c
   # CMSS13 source: /obj/structure/prop/ice_colony/surveying_device
   name: "surveying device"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/18205de5e8c22d4e6aed.rsi
@@ -10774,7 +10799,7 @@
   id: CMUBosenmoriExactaec7e6a896509874
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/30ccde09854f12e49b88.rsi
@@ -10818,7 +10843,7 @@
   id: CMUBosenmoriExactafaa5f520f2634f9
   # CMSS13 source: /obj/structure/prop/rock/black_ground
   name: "black ground"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7be6281d4193cd2094c1.rsi
@@ -10840,7 +10865,7 @@
   id: CMUBosenmoriExactafc0d188f59cd18c
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/24973a57f547097c297b.rsi
@@ -10946,7 +10971,7 @@
   id: CMUBosenmoriExactb1fee4ffb892ef32
   # CMSS13 source: /obj/structure/prop/souto_land/streamer
   name: "streamer"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9a266f17e5b5dde31ced.rsi
@@ -10999,7 +11024,7 @@
   id: CMUBosenmoriExactb2ec123dfc56e943
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7954699f04f7e8cf2f61.rsi
@@ -11058,7 +11083,7 @@
   id: CMUBosenmoriExactb41fdf7c43fe3355
   # CMSS13 source: /obj/structure/surface/table/holotable
   name: "holotable"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fc4ed39237d51d8e9a82.rsi
@@ -11070,7 +11095,7 @@
   id: CMUBosenmoriExactb4285e1314f6f109
   # CMSS13 source: /obj/structure/cargo_container/seegson/mid
   name: "mid"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7a8b7cb51ced001811e5.rsi
@@ -11140,7 +11165,7 @@
   id: CMUBosenmoriExactb5da57196a554511
   # CMSS13 source: /obj/structure/bed/chair/comfy
   name: "comfy"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e8a807609b45e09d375b.rsi
@@ -11186,7 +11211,7 @@
   id: CMUBosenmoriExactb6398999620b7e6a
   # CMSS13 source: /obj/structure/platform_decoration/kutjevo/smooth
   name: "smooth"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/37a6e0d6288409e60913.rsi
@@ -11196,7 +11221,7 @@
   id: CMUBosenmoriExactb64e091631722b8e
   # CMSS13 source: /obj/structure/prop/invuln/overhead
   name: "dense fuel line"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/f653f7bf02b2e470f0fa.rsi
@@ -11220,7 +11245,7 @@
   id: CMUBosenmoriExactb70adc7f29310512
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/top
   name: "top"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7057d18b887c65509192.rsi
@@ -11233,7 +11258,7 @@
   id: CMUBosenmoriExactb73a9f1ce12238db
   # CMSS13 source: /obj/structure/prop/invuln/pipe_water
   name: "pipe water"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9a005a1715dc287b5a51.rsi
@@ -11272,7 +11297,7 @@
   id: CMUBosenmoriExactb821625496d2f59d
   # CMSS13 source: /obj/structure/sign/safety/east
   name: "east safety"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/3477ebd612f50ae4823d.rsi
@@ -11284,7 +11309,7 @@
   id: CMUBosenmoriExactb833d690c3043f2e
   # CMSS13 source: /obj/structure/prop/ice_colony/flamingo
   name: "flamingo"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/33c5b3c4eca67a6e8c3d.rsi
@@ -11341,7 +11366,7 @@
   id: CMUBosenmoriExactb9353817b8efe306
   # CMSS13 source: /obj/structure/machinery/prop/almayer/CICmap/table/horizontal/segment/six
   name: "six"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/d8c7636b446448e29405.rsi
@@ -11445,7 +11470,7 @@
   id: CMUBosenmoriExactbc2422f889098c54
   # CMSS13 source: /obj/structure/prop/almayer/whiteboard
   name: "whiteboard"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/215f6888f43252c356dc.rsi
@@ -11505,7 +11530,7 @@
   id: CMUBosenmoriExactbd94ba4dbe63f45e
   # CMSS13 source: /obj/structure/cargo_container/seegson/right
   name: "right seegson"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/671675fa883e8be76d4a.rsi
@@ -11529,7 +11554,7 @@
   id: CMUBosenmoriExactbdbc8a35cb335305
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/top
   name: "top"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7057d18b887c65509192.rsi
@@ -11542,7 +11567,7 @@
   id: CMUBosenmoriExactbe204d6649413348
   # CMSS13 source: /obj/structure/sign/safety/fridge
   name: "fridge"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/661a8e2e3828e8b6211d.rsi
@@ -11590,7 +11615,7 @@
   id: CMUBosenmoriExactbe6b4eec5a2e3196
   # CMSS13 source: /obj/structure/bed/chair/office/light
   name: "light"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b5923519182c5552e719.rsi
@@ -11600,7 +11625,7 @@
   id: CMUBosenmoriExactbe9418a19ea80924
   # CMSS13 source: /obj/structure/prop/ice_colony/hula_girl
   name: "hula girl"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/440dc350fa8a2d31e580.rsi
@@ -11692,7 +11717,7 @@
   id: CMUBosenmoriExactbfd40edd788c24a3
   # CMSS13 source: /obj/structure/sign/banners/twe_worn
   name: "twe worn"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e316d2a9b92ae6fb4e62.rsi
@@ -11855,7 +11880,7 @@
   id: CMUBosenmoriExactc3d1548301b4d8e4
   # CMSS13 source: /obj/structure/bed/chair/wheelchair
   name: "wheelchair"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/a8c7277e2be177bb6a70.rsi
@@ -11888,7 +11913,7 @@
   id: CMUBosenmoriExactc50fd061307e6013
   # CMSS13 source: /obj/structure/prop/invuln/overhead/flammable_pipe/fly
   name: "fly"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/38cbc861bfa3bdab77a9.rsi
@@ -11936,7 +11961,7 @@
   id: CMUBosenmoriExactc580958504ababa1
   # CMSS13 source: /obj/structure/bed/chair/office/light
   name: "light"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b5923519182c5552e719.rsi
@@ -11947,7 +11972,7 @@
   id: CMUBosenmoriExactc5892227ce288328
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/6feae38ef43869cc6bae.rsi
@@ -11993,7 +12018,7 @@
   id: CMUBosenmoriExactc5e8a712a143b39e
   # CMSS13 source: /obj/structure/sign/safety/chem_lab
   name: "chem lab"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/d3e12b52ef757a1e0d5f.rsi
@@ -12016,7 +12041,7 @@
   id: CMUBosenmoriExactc5fa1772c0670a13
   # CMSS13 source: /obj/structure/noticeboard
   name: "wooden rack"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/246b9ddfd6c8f0e1018c.rsi
@@ -12029,7 +12054,7 @@
   id: CMUBosenmoriExactc6097b98d7b4f8e8
   # CMSS13 source: /obj/structure/prop/dam/crane/cargo
   name: "cargo"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/d694d1952cb015298585.rsi
@@ -12040,7 +12065,7 @@
   id: CMUBosenmoriExactc62bbb5283d1a1c1
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/bottom
   name: "bottom"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b16f9aa8cdd8267f805c.rsi
@@ -12077,7 +12102,7 @@
   id: CMUBosenmoriExactc693a33acbf45400
   # CMSS13 source: /obj/structure/flora/bush/ausbushes/grassybush
   name: "grassybush"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/aa3a852bbc736c80a4a8.rsi
@@ -12112,7 +12137,7 @@
   id: CMUBosenmoriExactc742d3d1cbde278f
   # CMSS13 source: /obj/structure/prop/ice_colony/hula_girl
   name: "hula girl"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/440dc350fa8a2d31e580.rsi
@@ -12194,7 +12219,7 @@
   id: CMUBosenmoriExactc87f48fc5c671922
   # CMSS13 source: /obj/structure/prop/broken_ladder
   name: "broken ladder"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/52d0b692046bc600870a.rsi
@@ -12285,7 +12310,7 @@
   id: CMUBosenmoriExactc947451720270dad
   # CMSS13 source: /obj/structure/sign/safety/food_storage
   name: "food storage"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/8bf4d5e79c0cc990f7b1.rsi
@@ -12321,7 +12346,7 @@
   id: CMUBosenmoriExactc9b5242dba73295e
   # CMSS13 source: /obj/structure/bed/bedroll
   name: "bedroll"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/463349bee018d5216cfc.rsi
@@ -12343,7 +12368,7 @@
   id: CMUBosenmoriExactca036448e850143e
   # CMSS13 source: /obj/structure/closet/emcloset
   name: "emcloset"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/5c0ddb18669b07df43b8.rsi
@@ -12354,7 +12379,7 @@
   id: CMUBosenmoriExactca10792d417509bc
   # CMSS13 source: /obj/structure/cargo_container/wy/left
   name: "left wy"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/c8a734bb29a605eeedf0.rsi
@@ -12390,7 +12415,7 @@
   id: CMUBosenmoriExactca7d15c66956cff0
   # CMSS13 source: /obj/structure/prop/ice_colony/surveying_device
   name: "surveying device"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/18205de5e8c22d4e6aed.rsi
@@ -12401,7 +12426,7 @@
   id: CMUBosenmoriExactca8bfc84866b1b58
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/on
   name: "on laptop"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/4783d6d8ebfe33ab3ae3.rsi
@@ -12435,7 +12460,7 @@
   id: CMUBosenmoriExactcaf17087b06319c1
   # CMSS13 source: /obj/structure/sink
   name: "sink"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9fa4469d10896c345714.rsi
@@ -12446,7 +12471,7 @@
   id: CMUBosenmoriExactcaf3d28c23a159e6
   # CMSS13 source: /obj/structure/platform_decoration
   name: "platform decoration"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/37a6e0d6288409e60913.rsi
@@ -12467,7 +12492,7 @@
   id: CMUBosenmoriExactcb99916d2ef175a4
   # CMSS13 source: /obj/structure/prop/holidays/string_lights/cap
   name: "cap"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/bcee039b2c608bbc42b2.rsi
@@ -12478,7 +12503,7 @@
   id: CMUBosenmoriExactcbb6d8bb5828000e
   # CMSS13 source: /obj/structure/sign/poster/ad
   name: "ad"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/10a4919bd8997bcbd6ea.rsi
@@ -12490,7 +12515,7 @@
   id: CMUBosenmoriExactcbf6d3203e51c433
   # CMSS13 source: /obj/structure/sign/banners/twe_flag
   name: "twe flag"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/1c26f1c8b7f1599d80f6.rsi
@@ -12571,7 +12596,7 @@
   id: CMUBosenmoriExactcce72cc1a70cfcbb
   # CMSS13 source: /obj/structure/closet
   name: "closet"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fbdd24c318b1e9ff610e.rsi
@@ -12603,7 +12628,7 @@
   id: CMUBosenmoriExactcd4fc4d4a61ebe5f
   # CMSS13 source: /obj/structure/platform/stair_cut
   name: "stair cut"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/4f1a90d2486ea7607dfe.rsi
@@ -12624,7 +12649,7 @@
   id: CMUBosenmoriExactcd86cfec02160a17
   # CMSS13 source: /obj/structure/sign/safety/fridge
   name: "fridge"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/661a8e2e3828e8b6211d.rsi
@@ -12683,7 +12708,7 @@
   id: CMUBosenmoriExactce79939f373e20d3
   # CMSS13 source: /obj/structure/flora/tree/joshua
   name: "joshua"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/10d0336198086713826b.rsi
@@ -12695,7 +12720,7 @@
   id: CMUBosenmoriExactcee913ec175d586b
   # CMSS13 source: /obj/structure/surface/table/reinforced/almayer_B
   name: "almayer b"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/388498b36b2a82c962d6.rsi
@@ -12801,7 +12826,7 @@
   id: CMUBosenmoriExactd10931f72da57e4a
   # CMSS13 source: /obj/structure/safe/cl_office
   name: "cl office"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9fac7039a305d43a3d76.rsi
@@ -12812,7 +12837,7 @@
   id: CMUBosenmoriExactd110c76ddeaacc67
   # CMSS13 source: /obj/structure/prop/dam/crane
   name: "crane"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/01a278497896c76fc226.rsi
@@ -12835,7 +12860,7 @@
   id: CMUBosenmoriExactd2077a5bbcbba0a4
   # CMSS13 source: /obj/structure/sign/poster/safety
   name: "safety"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/c8f612f22c13cd244144.rsi
@@ -12882,7 +12907,7 @@
   id: CMUBosenmoriExactd2936fd144825026
   # CMSS13 source: /obj/structure/sign/nosmoking_1
   name: "nosmoking 1"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ff0d3439327d892e7358.rsi
@@ -12894,7 +12919,7 @@
   id: CMUBosenmoriExactd2945081d6c6df97
   # CMSS13 source: /obj/structure/cargo_container/grant/right
   name: "right grant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/88ea2b946128441f06c0.rsi
@@ -12906,7 +12931,7 @@
   id: CMUBosenmoriExactd331af5b35204309
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/closed
   name: "closed"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/70e7e498607ccdc186bd.rsi
@@ -12940,7 +12965,7 @@
   id: CMUBosenmoriExactd3c007aa8a81162b
   # CMSS13 source: /obj/structure/bed/chair/comfy/bench/north
   name: "north bench"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/e8a807609b45e09d375b.rsi
@@ -12974,7 +12999,7 @@
   id: CMUBosenmoriExactd43c75d0e8a2cccd
   # CMSS13 source: /obj/structure/sign/safety/ladder
   name: "ladder"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/65aa8be93ac7ba65605b.rsi
@@ -13045,7 +13070,7 @@
   id: CMUBosenmoriExactd5dc3171db33d09b
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/76c23d07e3ec17eed223.rsi
@@ -13092,7 +13117,7 @@
   id: CMUBosenmoriExactd77fab66ca178a9b
   # CMSS13 source: /obj/structure/flora/tree/jungle/bigtreeTR
   name: "bigtreetr"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/eb56a0d13d9d1e85e3a4.rsi
@@ -13174,7 +13199,7 @@
   id: CMUBosenmoriExactd84ea469bdbdcb18
   # CMSS13 source: /obj/structure/sign/poster/pinup
   name: "pinup"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/97a3fc516c6633e8de2b.rsi
@@ -13196,7 +13221,7 @@
   id: CMUBosenmoriExactd88ced8866a275e6
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/30ccde09854f12e49b88.rsi
@@ -13300,7 +13325,7 @@
   id: CMUBosenmoriExactda131302e2501146
   # CMSS13 source: /obj/structure/prop/invuln/overhead/flammable_pipe
   name: "flammable pipe"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/38cbc861bfa3bdab77a9.rsi
@@ -13318,7 +13343,7 @@
   id: CMUBosenmoriExactda6b6a626705a1fb
   # CMSS13 source: /obj/structure/sign/safety/bathmens
   name: "bathmens"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/0938e9e6beba64fb7898.rsi
@@ -13362,7 +13387,7 @@
   id: CMUBosenmoriExactdb45b5e7f04bb058
   # CMSS13 source: /obj/structure/machinery/pipedispenser/disposal
   name: "disposal pipe dispenser"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/109432040bb72c124fb6.rsi
@@ -13396,7 +13421,7 @@
   id: CMUBosenmoriExactdbdca302aced5e3b
   # CMSS13 source: /obj/structure/sign/safety/ammunition
   name: "ammunition"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/4443f3d6c81f22ef718a.rsi
@@ -13408,7 +13433,7 @@
   id: CMUBosenmoriExactdbee105d82b96e9d
   # CMSS13 source: /obj/structure/sign/safety/bathwomens
   name: "bathwomens"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/8f65bf7982f9ecc1601b.rsi
@@ -13502,7 +13527,7 @@
   id: CMUBosenmoriExactde46d4a451477817
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/24973a57f547097c297b.rsi
@@ -13584,7 +13609,7 @@
   id: CMUBosenmoriExactdff379cb06c42eba
   # CMSS13 source: /obj/structure/closet/secure_closet/medical2
   name: "medical2"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ba7274226e5096877d4d.rsi
@@ -13607,7 +13632,7 @@
   id: CMUBosenmoriExacte08d53bad2dfb570
   # CMSS13 source: /obj/structure/surface/table
   name: "table"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fc4ed39237d51d8e9a82.rsi
@@ -13619,7 +13644,7 @@
   id: CMUBosenmoriExacte0ae00c4f7965883
   # CMSS13 source: /obj/structure/prop/server_equipment/laptop/closed
   name: "closed"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/70e7e498607ccdc186bd.rsi
@@ -13816,7 +13841,7 @@
   id: CMUBosenmoriExacte2e6888a04ad97f4
   # CMSS13 source: /obj/structure/sink
   name: "sink"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9fa4469d10896c345714.rsi
@@ -13886,7 +13911,7 @@
   id: CMUBosenmoriExacte5039d1fd3500c86
   # CMSS13 source: /obj/structure/closet/athletic_mixed
   name: "athletic mixed"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/720771e1646efbfa5181.rsi
@@ -13897,7 +13922,7 @@
   id: CMUBosenmoriExacte5bb05055cdaab2c
   # CMSS13 source: /obj/structure/prop/ice_colony/flamingo
   name: "flamingo"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/33c5b3c4eca67a6e8c3d.rsi
@@ -13908,7 +13933,7 @@
   id: CMUBosenmoriExacte5cc9cffa528e2b0
   # CMSS13 source: /obj/structure/sign/poster/safety
   name: "safety"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/c8f612f22c13cd244144.rsi
@@ -13920,7 +13945,7 @@
   id: CMUBosenmoriExacte5dea12a0ccadbf4
   # CMSS13 source: /obj/structure/prop/ice_colony/tiger_rug
   name: "tiger rug"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/1b20f8fb47b1f8a99f74.rsi
@@ -13931,7 +13956,7 @@
   id: CMUBosenmoriExacte6111a0c0c0dd09f
   # CMSS13 source: /obj/structure/sign/safety/intercom
   name: "intercom"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/54127f8ac8f229b536f7.rsi
@@ -13943,7 +13968,7 @@
   id: CMUBosenmoriExacte64d91c2f5e47a05
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/30ccde09854f12e49b88.rsi
@@ -13955,7 +13980,7 @@
   id: CMUBosenmoriExacte67208d4e4f4536b
   # CMSS13 source: /obj/structure/prop/dam/truck/mining
   name: "mining"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/23a273acc625ac2245af.rsi
@@ -13966,7 +13991,7 @@
   id: CMUBosenmoriExacte680788e83aa4b93
   # CMSS13 source: /obj/structure/prop/ice_colony/surveying_device/measuring_device
   name: "measuring device"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/2ea19d758a65954e162a.rsi
@@ -13977,7 +14002,7 @@
   id: CMUBosenmoriExacte6a28d120524a524
   # CMSS13 source: /obj/structure/displaycase
   name: "displaycase"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/1e337712c06b194b6453.rsi
@@ -14057,7 +14082,7 @@
   id: CMUBosenmoriExacte8212b4331587b0b
   # CMSS13 source: /obj/structure/bed/chair/office/light
   name: "light"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b5923519182c5552e719.rsi
@@ -14080,7 +14105,7 @@
   id: CMUBosenmoriExacte8b228c10ef5e72e
   # CMSS13 source: /obj/structure/sign/poster/clf
   name: "clf"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/a96b72064f75b3fc294d.rsi
@@ -14092,7 +14117,7 @@
   id: CMUBosenmoriExacte8c92a5fdba59b14
   # CMSS13 source: /obj/structure/machinery/pipedispenser
   name: "pipe dispenser"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/109432040bb72c124fb6.rsi
@@ -14148,7 +14173,7 @@
   id: CMUBosenmoriExacte945b80a545840d0
   # CMSS13 source: /obj/structure/device/broken_moog
   name: "broken moog"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/87206ed3b32e5991cfde.rsi
@@ -14182,7 +14207,7 @@
   id: CMUBosenmoriExactea265d94bfb71973
   # CMSS13 source: /obj/structure/closet/bombcloset
   name: "bombcloset"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/9417cf8b3120cbcb27a7.rsi
@@ -14218,7 +14243,7 @@
   id: CMUBosenmoriExactea86b8bfae867f0c
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/24973a57f547097c297b.rsi
@@ -14290,7 +14315,7 @@
   id: CMUBosenmoriExacteb9acd7ed4c94eb2
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/bottom
   name: "bottom"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b16f9aa8cdd8267f805c.rsi
@@ -14302,7 +14327,7 @@
   id: CMUBosenmoriExactebc26c52996726cc
   # CMSS13 source: /obj/structure/machinery/message_server
   name: "message server"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/6d7b283439221f865469.rsi
@@ -14532,7 +14557,7 @@
   id: CMUBosenmoriExacteedc7be168733b41
   # CMSS13 source: /obj/structure/cargo_container/grant/right
   name: "right grant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/88ea2b946128441f06c0.rsi
@@ -14544,7 +14569,7 @@
   id: CMUBosenmoriExacteef6153466dacad1
   # CMSS13 source: /obj/structure/bedsheetbin
   name: "bedsheetbin"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/7b9150e5ec220e5f1b54.rsi
@@ -14568,7 +14593,7 @@
   id: CMUBosenmoriExactef794bae74f7265c
   # CMSS13 source: /obj/structure/prop/almayer/cannon_cables
   name: "cannon cables"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/3820a98c42cdb698b67e.rsi
@@ -14579,7 +14604,7 @@
   id: CMUBosenmoriExactef9b0b0115406d56
   # CMSS13 source: /obj/structure/bed/chair/comfy/black
   name: "black comfy"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/6de16e3b9ebe0ca9e407.rsi
@@ -14614,7 +14639,7 @@
   id: CMUBosenmoriExactf0021e93978c1179
   # CMSS13 source: /obj/structure/cargo_container/grant/left
   name: "left grant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/3f24637e4f222584d5c4.rsi
@@ -14638,7 +14663,7 @@
   id: CMUBosenmoriExactf06a5a64c07ee723
   # CMSS13 source: /obj/structure/flora/pottedplant
   name: "pottedplant"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/30ccde09854f12e49b88.rsi
@@ -14673,7 +14698,7 @@
   id: CMUBosenmoriExactf11246bebcce2726
   # CMSS13 source: /obj/structure/closet/secure_closet/security/standard
   name: "standard security"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ad31345e708c4aae9cf7.rsi
@@ -14720,7 +14745,7 @@
   id: CMUBosenmoriExactf1963294aba0bc31
   # CMSS13 source: /obj/structure/sign/safety/conference_room
   name: "conference room"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/5197de06e5427355e47a.rsi
@@ -14823,7 +14848,7 @@
   id: CMUBosenmoriExactf279425d9ab0dfd9
   # CMSS13 source: /obj/structure/prop/holidays/string_lights
   name: "string lights"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/52ee26035931fcec5ea4.rsi
@@ -14918,7 +14943,7 @@
   id: CMUBosenmoriExactf3a85657ebf930df
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/middle
   name: "middle"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/82b25782626bc13dad61.rsi
@@ -14989,7 +15014,7 @@
   id: CMUBosenmoriExactf4871181a75866b0
   # CMSS13 source: /obj/structure/closet/secure_closet/security/standard
   name: "standard security"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ad31345e708c4aae9cf7.rsi
@@ -15037,7 +15062,7 @@
   id: CMUBosenmoriExactf591d9e78c70ccf1
   # CMSS13 source: /obj/structure/sign/poster/clf
   name: "clf"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/a96b72064f75b3fc294d.rsi
@@ -15061,7 +15086,7 @@
   id: CMUBosenmoriExactf6017021b2bd5c59
   # CMSS13 source: /obj/structure/sign/catclock
   name: "catclock"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/c3fef124b612d98d78e7.rsi
@@ -15084,7 +15109,7 @@
   id: CMUBosenmoriExactf628f21e604b1317
   # CMSS13 source: /obj/structure/prop/ice_colony/surveying_device
   name: "surveying device"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/18205de5e8c22d4e6aed.rsi
@@ -15222,7 +15247,7 @@
   id: CMUBosenmoriExactf7d3bd2c180b668f
   # CMSS13 source: /obj/structure/bed/chair/office/light
   name: "light"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b5923519182c5552e719.rsi
@@ -15303,7 +15328,7 @@
   id: CMUBosenmoriExactf8c454c1f0482cad
   # CMSS13 source: /obj/structure/prop/ice_colony/surveying_device/measuring_device
   name: "measuring device"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/2ea19d758a65954e162a.rsi
@@ -15381,7 +15406,7 @@
   id: CMUBosenmoriExactf9a3e96c20ae4046
   # CMSS13 source: /obj/structure/bed/chair/office/dark
   name: "dark office"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/4d610142421b097169a7.rsi
@@ -15414,7 +15439,7 @@
   id: CMUBosenmoriExactf9e2f9b5e0503658
   # CMSS13 source: /obj/structure/filtration/collector_pipes
   name: "collector pipes"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/ce26d6d9c5e07ee08b22.rsi
@@ -15426,7 +15451,7 @@
   id: CMUBosenmoriExactf9fd0cd3768393a8
   # CMSS13 source: /obj/structure/cargo_container/kelland/right
   name: "right kelland"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/1ab8db0bde9e6898412b.rsi
@@ -15450,7 +15475,7 @@
   id: CMUBosenmoriExactfa480ae0059c3926
   # CMSS13 source: /obj/structure/prop/almayer/whiteboard
   name: "whiteboard"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/215f6888f43252c356dc.rsi
@@ -15497,7 +15522,7 @@
   id: CMUBosenmoriExactfab7a31a9cfc1751
   # CMSS13 source: /obj/structure/closet
   name: "closet"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fbdd24c318b1e9ff610e.rsi
@@ -15621,7 +15646,7 @@
   id: CMUBosenmoriExactfbec1ba58d163dec
   # CMSS13 source: /obj/structure/machinery/iv_drip
   name: "iv drip"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/dcefce472920f5168097.rsi
@@ -15655,7 +15680,7 @@
   id: CMUBosenmoriExactfc55a8df7d352568
   # CMSS13 source: /obj/structure/flora/jungle/vines/light_3
   name: "light 3"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/23de67699f1405eb9c6d.rsi
@@ -15759,7 +15784,7 @@
   id: CMUBosenmoriExactfd47f5b9adcecca7
   # CMSS13 source: /obj/structure/flora/bush/ausbushes/reedbush
   name: "reedbush"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b21b6d375e5601af9d39.rsi
@@ -15886,7 +15911,7 @@
   id: CMUBosenmoriExactfe61f89c7f8814e9
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/bottom
   name: "bottom"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/b16f9aa8cdd8267f805c.rsi
@@ -15898,7 +15923,7 @@
   id: CMUBosenmoriExactfed0802425d5bb17
   # CMSS13 source: /obj/structure/closet
   name: "closet"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fbdd24c318b1e9ff610e.rsi
@@ -15910,7 +15935,7 @@
   id: CMUBosenmoriExactff055bdbe5dc4208
   # CMSS13 source: /obj/structure/roof/cargocrane_tracks/vertical/endcap1
   name: "endcap1"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/1ba66bde0161f47398ae.rsi
@@ -15921,7 +15946,7 @@
   id: CMUBosenmoriExactff0f3cc355ac953c
   # CMSS13 source: /obj/structure/cargo_container/horizontal/blue/middle
   name: "middle"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/82b25782626bc13dad61.rsi
@@ -15933,7 +15958,7 @@
   id: CMUBosenmoriExactff38a6f1ba6170e9
   # CMSS13 source: /obj/structure/sign/poster/pinup
   name: "pinup"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/97a3fc516c6633e8de2b.rsi
@@ -15991,7 +16016,7 @@
   id: CMUBosenmoriExactffdf8ae5b884a218
   # CMSS13 source: /obj/structure/prop/invuln/overhead/flammable_pipe/fly
   name: "fly"
-  parent: BaseStructure
+  parent: CMUBosenmoriExactStructureBase
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/38cbc861bfa3bdab77a9.rsi
