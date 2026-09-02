@@ -356129,7 +356129,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32308
     components:
     - type: MetaData
@@ -356142,7 +356142,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32309
     components:
     - type: MetaData
@@ -356155,7 +356155,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32310
     components:
     - type: MetaData
@@ -356168,7 +356168,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32311
     components:
     - type: MetaData
@@ -356181,7 +356181,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32312
     components:
     - type: MetaData
@@ -356194,7 +356194,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32313
     components:
     - type: MetaData
@@ -356207,7 +356207,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32314
     components:
     - type: MetaData
@@ -356220,7 +356220,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32315
     components:
     - type: MetaData
@@ -356233,7 +356233,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32316
     components:
     - type: MetaData
@@ -356246,7 +356246,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32317
     components:
     - type: MetaData
@@ -356259,7 +356259,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32318
     components:
     - type: MetaData
@@ -356272,7 +356272,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32319
     components:
     - type: MetaData
@@ -356285,7 +356285,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32320
     components:
     - type: MetaData
@@ -356298,7 +356298,7 @@ entities:
         types:
           Blunt: 100
         groups: null
-      adjust: 253,0
+      adjust: 229,0
   - uid: 32321
     components:
     - type: MetaData
@@ -357638,7 +357638,7 @@ entities:
     components:
     - type: Transform
       parent: 1
-      pos: 20.5,34.5
+      pos: 22.5,34.5
     - type: RMCTeleporterViewer
       id: bosenmori-construction-site-1
       projectionEnabled: true
