@@ -88,6 +88,9 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: Physics
+    canCollide: false
+    bodyType: static
   - type: VentCrawlable
     travelDirection: TSouth
   - type: Construction
