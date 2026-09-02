@@ -7,6 +7,8 @@ using Content.IntegrationTests.Fixtures;
 using Content.Shared.CMU14.Input;
 using Content.Shared._RMC14.Input;
 using Content.Shared.CCVar;
+using Content.Shared.Input;
+using Robust.Client.Input;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.GameObjects;
@@ -18,6 +20,25 @@ namespace Content.IntegrationTests.Tests.UserInterface;
 [TestFixture]
 public sealed class RulesKeyRebindMergeRegressionTest : GameTest
 {
+    [Test]
+    public async Task PlainCDefaultsToRmcOtherHandInteractionWithoutKnockdown()
+    {
+        await Client.WaitAssertion(() =>
+        {
+            var input = Client.ResolveDependency<IInputManager>();
+            var otherHandBindings = input.GetKeyBindings(CMKeyFunctions.RMCInteractWithOtherHand);
+            var knockdownBindings = input.GetKeyBindings(ContentKeyFunctions.ToggleKnockdown);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(otherHandBindings, Has.Some.Matches<IKeyBinding>(IsPlainC),
+                    "plain C must keep the RMC magazine/other-hand interaction");
+                Assert.That(knockdownBindings, Has.None.Matches<IKeyBinding>(IsPlainC),
+                    "plain C must not also toggle knockdown");
+            });
+        });
+    }
+
     [Test]
     public async Task AttachableGameplayBindingsRunInsidePrediction()
     {
@@ -210,6 +231,14 @@ public sealed class RulesKeyRebindMergeRegressionTest : GameTest
             foreach (var descendant in Descendants(child))
                 yield return descendant;
         }
+    }
+
+    private static bool IsPlainC(IKeyBinding binding)
+    {
+        return binding.BaseKey == Keyboard.Key.C &&
+               binding.Mod1 == Keyboard.Key.Unknown &&
+               binding.Mod2 == Keyboard.Key.Unknown &&
+               binding.Mod3 == Keyboard.Key.Unknown;
     }
 
     private static int CountPrototype(IEntityManager entities, string prototypeId)
