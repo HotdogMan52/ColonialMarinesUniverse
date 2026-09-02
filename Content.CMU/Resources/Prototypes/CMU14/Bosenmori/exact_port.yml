@@ -1239,12 +1239,14 @@
   id: CMUBosenmoriExact14c4d784a867e0fd
   # CMSS13 source: /obj/structure/surface/table/holotable
   name: "holotable"
-  parent: CMUBosenmoriExactStructureBase
+  parent: CMTable
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fc4ed39237d51d8e9a82.rsi
     state: "source"
     noRot: true
+  - type: IconSmooth
+    enabled: false
 
 - type: entity
   id: CMUBosenmoriExact14cbf0caf8f3ae0e
@@ -4848,12 +4850,14 @@
   id: CMUBosenmoriExact4ec8fd43f3d673be
   # CMSS13 source: /obj/structure/surface/table/reinforced/almayer_B
   name: "almayer b"
-  parent: CMUBosenmoriExactStructureBase
+  parent: CMTableAlmayer
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/388498b36b2a82c962d6.rsi
     state: "source"
     noRot: true
+  - type: IconSmooth
+    enabled: false
 
 - type: tile
   id: CMUBosenmoriExact4f1141cdf862bd1e
@@ -11083,13 +11087,15 @@
   id: CMUBosenmoriExactb41fdf7c43fe3355
   # CMSS13 source: /obj/structure/surface/table/holotable
   name: "holotable"
-  parent: CMUBosenmoriExactStructureBase
+  parent: CMTable
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/fc4ed39237d51d8e9a82.rsi
     state: "source"
     noRot: true
     color: "#424a50ff"
+  - type: IconSmooth
+    enabled: false
 
 - type: entity
   id: CMUBosenmoriExactb4285e1314f6f109
@@ -12720,7 +12726,7 @@
   id: CMUBosenmoriExactcee913ec175d586b
   # CMSS13 source: /obj/structure/surface/table/reinforced/almayer_B
   name: "almayer b"
-  parent: CMUBosenmoriExactStructureBase
+  parent: CMTableAlmayer
   components:
   - type: Sprite
     sprite: CMU14/Bosenmori/Exact/388498b36b2a82c962d6.rsi
@@ -12728,6 +12734,8 @@
     noRot: true
     offset: 0,0.15625
     color: "#ffb84dff"
+  - type: IconSmooth
+    enabled: false
 
 - type: entity
   id: CMUBosenmoriExactcf48a42bb4955364
